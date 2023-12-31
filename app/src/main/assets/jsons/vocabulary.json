@@ -1,0 +1,902 @@
+[
+  {
+    "symbol": "あい",
+    "meaning": "amor",
+    "type": "Words",
+    "romaji": "ai"
+  },
+  {
+    "symbol": "あお",
+    "meaning": "azul",
+    "type": "Words",
+    "romaji": "ao"
+  },
+  {
+    "symbol": "い",
+    "meaning": "estomago",
+    "type": "Words",
+    "romaji": "i"
+  },
+  {
+    "symbol": "え",
+    "meaning": "cuadro",
+    "type": "Words",
+    "romaji": "e"
+  },
+  {
+    "symbol": "いえ",
+    "meaning": "Casa",
+    "type": "Words",
+    "romaji": "ie"
+  },
+  {
+    "symbol": "うえ",
+    "meaning": "encima",
+    "type": "Words",
+    "romaji": "Ue"
+  },
+  {
+    "symbol": "おおい",
+    "meaning": "muchos",
+    "type": "Words",
+    "romaji": "ooi"
+  },
+  {
+    "symbol": "か",
+    "meaning": "mosquito",
+    "type": "Words",
+    "romaji": "ka"
+  },
+  {
+    "symbol": "かい",
+    "meaning": "conchas",
+    "type": "Words",
+    "romaji": "Kai"
+  },
+  {
+    "symbol": "かお",
+    "meaning": "Cara",
+    "type": "Words",
+    "romaji": "Kao"
+  },
+  {
+    "symbol": "き",
+    "meaning": "arbol",
+    "type": "Words",
+    "romaji": "Ki"
+  },
+  {
+    "symbol": "あき",
+    "meaning": "otono",
+    "type": "Words",
+    "romaji": "aki"
+  },
+  {
+    "symbol": "くうき",
+    "meaning": "aire",
+    "type": "Words",
+    "romaji": "Kuuki"
+  },
+  {
+    "symbol": "け",
+    "meaning": "Pelo",
+    "type": "Words",
+    "romaji": "ke"
+  },
+  {
+    "symbol": "いけ",
+    "meaning": "estanque",
+    "type": "Words",
+    "romaji": "ike"
+  },
+  {
+    "symbol": "こい",
+    "meaning": "pez carpa",
+    "type": "Words",
+    "romaji": "Koi"
+  },
+  {
+    "symbol": "こえ",
+    "meaning": "voz",
+    "type": "Words",
+    "romaji": "ie"
+  },
+  {
+    "symbol": "ここ",
+    "meaning": "aqui",
+    "type": "Words",
+    "romaji": "koko"
+  },
+  {
+    "symbol": "あさ",
+    "meaning": "manana",
+    "type": "Words",
+    "romaji": "asa"
+  },
+  {
+    "symbol": "かさ",
+    "meaning": "paraguas",
+    "type": "Words",
+    "romaji": "Kasa"
+  },
+  {
+    "symbol": "しお",
+    "meaning": "sal",
+    "type": "Words",
+    "romaji": "shio"
+  },
+  {
+    "symbol": "しか",
+    "meaning": "venado",
+    "type": "Words",
+    "romaji": "shika"
+  },
+  {
+    "symbol": "すいか",
+    "meaning": "sandia",
+    "type": "Words",
+    "romaji": "Suika"
+  },
+  {
+    "symbol": "いす",
+    "meaning": "Silla",
+    "type": "Words",
+    "romaji": "isu"
+  },
+  {
+    "symbol": "あせ",
+    "meaning": "sudor",
+    "type": "Words",
+    "romaji": "ase"
+  },
+  {
+    "symbol": "せかい",
+    "meaning": "mundo",
+    "type": "Words",
+    "romaji": "sekai"
+  },
+  {
+    "symbol": "そこ",
+    "meaning": "ahi",
+    "type": "Words",
+    "romaji": "soko"
+  },
+  {
+    "symbol": "うそ",
+    "meaning": "mentira",
+    "type": "Words",
+    "romaji": "uso"
+  },
+  {
+    "symbol": "たいこ",
+    "meaning": "tambor",
+    "type": "Words",
+    "romaji": "taiko"
+  },
+  {
+    "symbol": "した",
+    "meaning": "abajo",
+    "type": "Words",
+    "romaji": "shita"
+  },
+  {
+    "symbol": "ち",
+    "meaning": "sangre",
+    "type": "Words",
+    "romaji": "chi"
+  },
+  {
+    "symbol": "くち",
+    "meaning": "boca",
+    "type": "Words",
+    "romaji": "Kuchi"
+  },
+  {
+    "symbol": "つき",
+    "meaning": "luna",
+    "type": "Words",
+    "romaji": "tsuki"
+  },
+  {
+    "symbol": "つくえ",
+    "meaning": "escritorio",
+    "type": "Words",
+    "romaji": "tsukue"
+  },
+  {
+    "symbol": "て",
+    "meaning": "cuerpo",
+    "type": "Words",
+    "romaji": "te"
+  },
+  {
+    "symbol": "てつ",
+    "meaning": "acero",
+    "type": "Words",
+    "romaji": "tetsu"
+  },
+  {
+    "symbol": "いと",
+    "meaning": "hilo",
+    "type": "Words",
+    "romaji": "ito"
+  },
+  {
+    "symbol": "とけい",
+    "meaning": "reloj",
+    "type": "Words",
+    "romaji": "tokee"
+  },
+  {
+    "symbol": "いくら",
+    "meaning": "costo",
+    "type": "Words",
+    "romaji": "ikura"
+  },
+  {
+    "symbol": "あつい",
+    "meaning": "calor",
+    "type": "Words",
+    "romaji": "atsui"
+  },
+  {
+    "symbol": "さむい",
+    "meaning": "frio",
+    "type": "Words",
+    "romaji": "samui"
+  },
+  {
+    "symbol": "くるま",
+    "meaning": "coche",
+    "type": "Words",
+    "romaji": "Kuruma"
+  },
+  {
+    "symbol": "じてんしや",
+    "meaning": "bicicleta",
+    "type": "Words",
+    "romaji": "Shitensha"
+  },
+  {
+    "symbol": "やま",
+    "meaning": "montana",
+    "type": "Words",
+    "romaji": "Yama"
+  },
+  {
+    "symbol": "やさい",
+    "meaning": "verdura",
+    "type": "Words",
+    "romaji": "Yasai"
+  },
+  {
+    "symbol": "やくそく",
+    "meaning": "promesa",
+    "type": "Words",
+    "romaji": "yakutsuko"
+  },
+  {
+    "symbol": "ゆき",
+    "meaning": "nieve",
+    "type": "Words",
+    "romaji": "yuki"
+  },
+  {
+    "symbol": "ゆめ",
+    "meaning": "sueno",
+    "type": "Words",
+    "romaji": "yume"
+  },
+  {
+    "symbol": "よる",
+    "meaning": "noche",
+    "type": "Words",
+    "romaji": "yoru"
+  },
+  {
+    "symbol": "よやく",
+    "meaning": "reservacion",
+    "type": "Words",
+    "romaji": "yoyaku"
+  },
+  {
+    "symbol": "さかな",
+    "meaning": "pez",
+    "type": "Words",
+    "romaji": "sakana"
+  },
+  {
+    "symbol": "ちかてつ",
+    "meaning": "metro",
+    "type": "Words",
+    "romaji": "chikatetsu"
+  },
+  {
+    "symbol": "おととい",
+    "meaning": "anteayer",
+    "type": "Words",
+    "romaji": "ototoi"
+  },
+  {
+    "symbol": "かに",
+    "meaning": "Cangrejo",
+    "type": "Words",
+    "romaji": "Kani"
+  },
+  {
+    "symbol": "いぬ",
+    "meaning": "perro",
+    "type": "Words",
+    "romaji": "inu"
+  },
+  {
+    "symbol": "つの",
+    "meaning": "esquina (?)",
+    "type": "Words",
+    "romaji": "tsuno"
+  },
+  {
+    "symbol": "なつ",
+    "meaning": "Verano",
+    "type": "Words",
+    "romaji": "natsu"
+  },
+  {
+    "symbol": "ふね",
+    "meaning": "barco",
+    "type": "Words",
+    "romaji": "fune"
+  },
+  {
+    "symbol": "へい",
+    "meaning": "muro",
+    "type": "Words",
+    "romaji": "Hei"
+  },
+  {
+    "symbol": "ほし",
+    "meaning": "estrella",
+    "type": "Words",
+    "romaji": "Hoshi"
+  },
+  {
+    "symbol": "はた",
+    "meaning": "bandera",
+    "type": "Words",
+    "romaji": "Hata"
+  },
+  {
+    "symbol": "くつ",
+    "meaning": "Zapatos",
+    "type": "Words",
+    "romaji": "Kutsu"
+  },
+  {
+    "symbol": "おかね",
+    "meaning": "dinero",
+    "type": "Words",
+    "romaji": "okane"
+  },
+  {
+    "symbol": "はえ",
+    "meaning": "mosca",
+    "type": "Words",
+    "romaji": "Hae"
+  },
+  {
+    "symbol": "はこ",
+    "meaning": "Caja",
+    "type": "Words",
+    "romaji": "Hako"
+  },
+  {
+    "symbol": "ひこうき",
+    "meaning": "avion",
+    "type": "Words",
+    "romaji": "HiKooki"
+  },
+  {
+    "symbol": "ひと",
+    "meaning": "Persona",
+    "type": "Words",
+    "romaji": "Hito"
+  },
+  {
+    "symbol": "ふえ",
+    "meaning": "flauta",
+    "type": "Words",
+    "romaji": "fue"
+  },
+  {
+    "symbol": "ふく",
+    "meaning": "ropa",
+    "type": "Words",
+    "romaji": "fuku"
+  },
+  {
+    "symbol": "へい",
+    "meaning": "muro",
+    "type": "Words",
+    "romaji": "Hei"
+  },
+  {
+    "symbol": "へいたい",
+    "meaning": "soldado",
+    "type": "Words",
+    "romaji": "Heitai"
+  },
+  {
+    "symbol": "ほね",
+    "meaning": "hueso",
+    "type": "Words",
+    "romaji": "Hone"
+  },
+  {
+    "symbol": "あたま",
+    "meaning": "cabeza",
+    "type": "Words",
+    "romaji": "atama"
+  },
+  {
+    "symbol": "うま",
+    "meaning": "Caballo",
+    "type": "Words",
+    "romaji": "uma"
+  },
+  {
+    "symbol": "みせ",
+    "meaning": "tienda",
+    "type": "Words",
+    "romaji": "mise"
+  },
+  {
+    "symbol": "みち",
+    "meaning": "calle",
+    "type": "Words",
+    "romaji": "michi"
+  },
+  {
+    "symbol": "みみ",
+    "meaning": "oreja",
+    "type": "Words",
+    "romaji": "mimi"
+  },
+  {
+    "symbol": "むし",
+    "meaning": "insecto",
+    "type": "Words",
+    "romaji": "mushi"
+  },
+  {
+    "symbol": "むね",
+    "meaning": "pecho",
+    "type": "Words",
+    "romaji": "mune"
+  },
+  {
+    "symbol": "もしもし",
+    "meaning": "\"hola\"",
+    "type": "Words",
+    "romaji": "moshi moshi"
+  },
+  {
+    "symbol": "め",
+    "meaning": "ojo",
+    "type": "Words",
+    "romaji": "me"
+  },
+  {
+    "symbol": "あめ",
+    "meaning": "lluvia",
+    "type": "Words",
+    "romaji": "ame"
+  },
+  {
+    "symbol": "あめ",
+    "meaning": "dulces",
+    "type": "Words",
+    "romaji": "ame"
+  },
+  {
+    "symbol": "まめ",
+    "meaning": "Pequeno",
+    "type": "Words",
+    "romaji": "mame"
+  },
+  {
+    "symbol": "まめ",
+    "meaning": "legumbre",
+    "type": "Words",
+    "romaji": "mame"
+  },
+  {
+    "symbol": "くも",
+    "meaning": "arana",
+    "type": "Words",
+    "romaji": "Kumo"
+  },
+  {
+    "symbol": "くも",
+    "meaning": "nube",
+    "type": "Words",
+    "romaji": "Kumo"
+  },
+  {
+    "symbol": "さくら",
+    "meaning": "Cerezo",
+    "type": "Words",
+    "romaji": "sakura"
+  },
+  {
+    "symbol": "さら",
+    "meaning": "Plato",
+    "type": "Words",
+    "romaji": "sara"
+  },
+  {
+    "symbol": "とら",
+    "meaning": "tigre",
+    "type": "Words",
+    "romaji": "tora"
+  },
+  {
+    "symbol": "あり",
+    "meaning": "hormiga",
+    "type": "Words",
+    "romaji": "ari"
+  },
+  {
+    "symbol": "こおり",
+    "meaning": "hielo",
+    "type": "Words",
+    "romaji": "koori"
+  },
+  {
+    "symbol": "さる",
+    "meaning": "mono",
+    "type": "Words",
+    "romaji": "Saru"
+  },
+  {
+    "symbol": "つる",
+    "meaning": "grulla",
+    "type": "Words",
+    "romaji": "tsuru"
+  },
+  {
+    "symbol": "しろ",
+    "meaning": "blanco",
+    "type": "Words",
+    "romaji": "shiro"
+  },
+  {
+    "symbol": "しろ",
+    "meaning": "Castillo",
+    "type": "Words",
+    "romaji": "shiro"
+  },
+  {
+    "symbol": "ろうそく",
+    "meaning": "vela",
+    "type": "Words",
+    "romaji": "rousoko"
+  },
+  {
+    "symbol": "れきし",
+    "meaning": "historia",
+    "type": "Words",
+    "romaji": "Rekishi"
+  },
+  {
+    "symbol": "わたし",
+    "meaning": "yo",
+    "type": "Words",
+    "romaji": "watashi"
+  },
+  {
+    "symbol": "かわ",
+    "meaning": "rio",
+    "type": "Words",
+    "romaji": "Kawa"
+  },
+  {
+    "symbol": "わに",
+    "meaning": "cocodrilo",
+    "type": "Words",
+    "romaji": "Kani"
+  },
+  {
+    "symbol": "きりん",
+    "meaning": "Jirafa",
+    "type": "Words",
+    "romaji": "Kirin"
+  },
+  {
+    "symbol": "こうえん",
+    "meaning": "parque",
+    "type": "Words",
+    "romaji": "Kouen"
+  },
+  {
+    "symbol": "せんせい",
+    "meaning": "maestro",
+    "type": "Words",
+    "romaji": "sensei"
+  },
+  {
+    "symbol": "うみ",
+    "meaning": "Playa",
+    "type": "Words",
+    "romaji": "umi"
+  },
+  {
+    "symbol": "ほんや",
+    "meaning": "libreria",
+    "type": "Words",
+    "romaji": "hon-ya"
+  },
+  {
+    "symbol": "おつり",
+    "meaning": "cambio (dinero)",
+    "type": "Words",
+    "romaji": "otsuri"
+  },
+  {
+    "symbol": "こころ",
+    "meaning": "corazon",
+    "type": "Words",
+    "romaji": "Kokoro"
+  },
+  {
+    "symbol": "せんす",
+    "meaning": "abanico Japones",
+    "type": "Words",
+    "romaji": "sensu"
+  },
+  {
+    "symbol": "きれ",
+    "meaning": "trapo",
+    "type": "Words",
+    "romaji": "Kire"
+  },
+  {
+    "symbol": "がいこくじん",
+    "meaning": "extranjero",
+    "type": "Words",
+    "romaji": "gaikokujin"
+  },
+  {
+    "symbol": "ごぜん",
+    "meaning": "A.M.",
+    "type": "Words",
+    "romaji": "gozen"
+  },
+  {
+    "symbol": "ごご",
+    "meaning": "P.M.",
+    "type": "Words",
+    "romaji": "gogo"
+  },
+  {
+    "symbol": "みぎ",
+    "meaning": "derecha",
+    "type": "Words",
+    "romaji": "migi"
+  },
+  {
+    "symbol": "ひだり",
+    "meaning": "izQuierda",
+    "type": "Words",
+    "romaji": "hidari"
+  },
+  {
+    "symbol": "かぞく",
+    "meaning": "familia",
+    "type": "Words",
+    "romaji": "kazoku"
+  },
+  {
+    "symbol": "はいぎら",
+    "meaning": "Cenicero",
+    "type": "Words",
+    "romaji": "haizara"
+  },
+  {
+    "symbol": "ふじさん",
+    "meaning": "montana",
+    "type": "Words",
+    "romaji": "fujisan"
+  },
+  {
+    "symbol": "めがね",
+    "meaning": "lentes",
+    "type": "Words",
+    "romaji": "megane"
+  },
+  {
+    "symbol": "かぜ",
+    "meaning": "viento",
+    "type": "Words",
+    "romaji": "kaze"
+  },
+  {
+    "symbol": "ぐんじん",
+    "meaning": "soldado",
+    "type": "Words",
+    "romaji": "gunJin"
+  },
+  {
+    "symbol": "かぐ",
+    "meaning": "mueble",
+    "type": "Words",
+    "romaji": "Kagu"
+  },
+  {
+    "symbol": "げんいん",
+    "meaning": "Causa",
+    "type": "Words",
+    "romaji": "gen in"
+  },
+  {
+    "symbol": "すいぞくかん",
+    "meaning": "aquario",
+    "type": "Words",
+    "romaji": "Suizokukan"
+  },
+  {
+    "symbol": "わなげ",
+    "meaning": "lanza anillo",
+    "type": "Words",
+    "romaji": "wanage"
+  },
+  {
+    "symbol": "りんご",
+    "meaning": "manzana",
+    "type": "Words",
+    "romaji": "ringo"
+  },
+  {
+    "symbol": "かがく",
+    "meaning": "quimico",
+    "type": "Words",
+    "romaji": "Kagaku"
+  },
+  {
+    "symbol": "ぎんこう",
+    "meaning": "banco",
+    "type": "Words",
+    "romaji": "ginko"
+  },
+  {
+    "symbol": "めぐすり",
+    "meaning": "gotas ojos",
+    "type": "Words",
+    "romaji": "megusuri"
+  },
+  {
+    "symbol": "ひげ",
+    "meaning": "barba",
+    "type": "Words",
+    "romaji": "hige"
+  },
+  {
+    "symbol": "かざん",
+    "meaning": "Volcan",
+    "type": "Words",
+    "romaji": "Kazan"
+  },
+  {
+    "symbol": "みず",
+    "meaning": "agua",
+    "type": "Words",
+    "romaji": "Mizu"
+  },
+  {
+    "symbol": "えび",
+    "meaning": "Camaron",
+    "type": "Words",
+    "romaji": "ebi"
+  },
+  {
+    "symbol": "くだもん",
+    "meaning": "fruta",
+    "type": "Words",
+    "romaji": "kudamono"
+  },
+  {
+    "symbol": "かばん",
+    "meaning": "mochila",
+    "type": "Words",
+    "romaji": "Kaban"
+  },
+  {
+    "symbol": "でんわ",
+    "meaning": "telefono",
+    "type": "Words",
+    "romaji": "denwa"
+  },
+  {
+    "symbol": "まど",
+    "meaning": "ventana",
+    "type": "Words",
+    "romaji": "mado"
+  },
+  {
+    "symbol": "しんぶん",
+    "meaning": "Periodico",
+    "type": "Words",
+    "romaji": "shinbun"
+  },
+  {
+    "symbol": "えだ",
+    "meaning": "rama",
+    "type": "Words",
+    "romaji": "eda"
+  },
+  {
+    "symbol": "うで",
+    "meaning": "brazo",
+    "type": "Words",
+    "romaji": "ude"
+  },
+  {
+    "symbol": "でんき",
+    "meaning": "electricidad",
+    "type": "Words",
+    "romaji": "denki"
+  },
+  {
+    "symbol": "おどり",
+    "meaning": "baile",
+    "type": "Words",
+    "romaji": "odori"
+  },
+  {
+    "symbol": "こども",
+    "meaning": "Kodomo",
+    "type": "Words",
+    "romaji": "nino(a)"
+  },
+  {
+    "symbol": "たばこ",
+    "meaning": "Cigarro",
+    "type": "Words",
+    "romaji": "tabaco"
+  },
+  {
+    "symbol": "ゆび",
+    "meaning": "dedo",
+    "type": "Words",
+    "romaji": "Yubi"
+  },
+  {
+    "symbol": "へび",
+    "meaning": "serpiente",
+    "type": "Words",
+    "romaji": "Hebi"
+  },
+  {
+    "symbol": "ぶんか",
+    "meaning": "cultura",
+    "type": "Words",
+    "romaji": "bunka"
+  },
+  {
+    "symbol": "なべ",
+    "meaning": "cacerola",
+    "type": "Words",
+    "romaji": "nabe"
+  },
+  {
+    "symbol": "ぼいん",
+    "meaning": "vocal",
+    "type": "Words",
+    "romaji": "boin"
+  },
+  {
+    "symbol": "えんぴつ",
+    "meaning": "lapiz",
+    "type": "Words",
+    "romaji": "empitsu"
+  }
+]

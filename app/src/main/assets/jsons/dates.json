@@ -1,0 +1,457 @@
+[
+  {
+    "symbol": "一日",
+    "meaning": "1st",
+    "type": "Days",
+    "romaji": "tsuitachi"
+  },
+  {
+    "symbol": "二日",
+    "meaning": "2nd",
+    "type": "Days",
+    "romaji": "futsuka"
+  },
+  {
+    "symbol": "三日",
+    "meaning": "3rd",
+    "type": "Days",
+    "romaji": "mikka"
+  },
+  {
+    "symbol": "四日",
+    "meaning": "4th",
+    "type": "Days",
+    "romaji": "yokka"
+  },
+  {
+    "symbol": "五日",
+    "meaning": "5th",
+    "type": "Days",
+    "romaji": "vitsuka"
+  },
+  {
+    "symbol": "六日",
+    "meaning": "6th",
+    "type": "Days",
+    "romaji": "muika"
+  },
+  {
+    "symbol": "七日",
+    "meaning": "7th",
+    "type": "Days",
+    "romaji": "nanoka"
+  },
+  {
+    "symbol": "八日",
+    "meaning": "8th",
+    "type": "Days",
+    "romaji": "yōka"
+  },
+  {
+    "symbol": "九日",
+    "meaning": "9th",
+    "type": "Days",
+    "romaji": "kokonoka"
+  },
+  {
+    "symbol": "十日",
+    "meaning": "10th",
+    "type": "Days",
+    "romaji": "tōka"
+  },
+  {
+    "symbol": "十一日",
+    "meaning": "11th",
+    "type": "Days",
+    "romaji": "jū ichi-nichi"
+  },
+  {
+    "symbol": "十二日",
+    "meaning": "12th",
+    "type": "Days",
+    "romaji": "jū ni-nichi"
+  },
+  {
+    "symbol": "十三日",
+    "meaning": "13th",
+    "type": "Days",
+    "romaji": "jū san-nichi"
+  },
+  {
+    "symbol": "十四日",
+    "meaning": "14th",
+    "type": "Days",
+    "romaji": "jū yokka"
+  },
+  {
+    "symbol": "十五日",
+    "meaning": "15th",
+    "type": "Days",
+    "romaji": "jū go-nichi"
+  },
+  {
+    "symbol": "十六日",
+    "meaning": "16th",
+    "type": "Days",
+    "romaji": "jū roku-nichi"
+  },
+  {
+    "symbol": "十七日",
+    "meaning": "17th",
+    "type": "Days",
+    "romaji": "jū shichi-nichi"
+  },
+  {
+    "symbol": "十八日",
+    "meaning": "18th",
+    "type": "Days",
+    "romaji": "jū hachi-nichi"
+  },
+  {
+    "symbol": "十九日",
+    "meaning": "19th",
+    "type": "Days",
+    "romaji": "jū ku-nichi"
+  },
+  {
+    "symbol": "二十日",
+    "meaning": "20th",
+    "type": "Days",
+    "romaji": "hatsuka"
+  },
+  {
+    "symbol": "二十一日",
+    "meaning": "21st",
+    "type": "Days",
+    "romaji": "ni-jū ichi-nichi"
+  },
+  {
+    "symbol": "二十二日",
+    "meaning": "22nd",
+    "type": "Days",
+    "romaji": "ni-jū ni-nichi"
+  },
+  {
+    "symbol": "二十三日",
+    "meaning": "23rd",
+    "type": "Days",
+    "romaji": "ni-jū san-nichi"
+  },
+  {
+    "symbol": "二十四日",
+    "meaning": "24th",
+    "type": "Days",
+    "romaji": "ni-jū yokka"
+  },
+  {
+    "symbol": "二十五日",
+    "meaning": "25th",
+    "type": "Days",
+    "romaji": "ni-jū go-nichi"
+  },
+  {
+    "symbol": "二十六日",
+    "meaning": "26th",
+    "type": "Days",
+    "romaji": "ni-jū roku-nichi"
+  },
+  {
+    "symbol": "二十七日",
+    "meaning": "27th",
+    "type": "Days",
+    "romaji": "nijū shichi-nichi"
+  },
+  {
+    "symbol": "二十八日",
+    "meaning": "28th",
+    "type": "Days",
+    "romaji": "ni-jū hachi-nichi"
+  },
+  {
+    "symbol": "二十九日",
+    "meaning": "29th",
+    "type": "Days",
+    "romaji": "ni-jū ku-nichi"
+  },
+  {
+    "symbol": "三十日",
+    "meaning": "30th",
+    "type": "Days",
+    "romaji": "san-jū-nichi"
+  },
+  {
+    "symbol": "三十一日",
+    "meaning": "31st",
+    "type": "Days",
+    "romaji": "san-jū ichi-nichi"
+  },
+  {
+    "symbol": "日曜日",
+    "meaning": "Sunday",
+    "type": "Week Days",
+    "romaji": "nichi-yōbi"
+  },
+  {
+    "symbol": "月曜日",
+    "meaning": "Monday",
+    "type": "Week Days",
+    "romaji": "gets-yōbi"
+  },
+  {
+    "symbol": "火曜日",
+    "meaning": "Tuesday",
+    "type": "Week Days",
+    "romaji": "ka-yōbi"
+  },
+  {
+    "symbol": "水曜日",
+    "meaning": "Wednesday",
+    "type": "Week Days",
+    "romaji": "su- yōbi"
+  },
+  {
+    "symbol": "木曜日",
+    "meaning": "Thursday",
+    "type": "Week Days",
+    "romaji": "moku-yōbi"
+  },
+  {
+    "symbol": "金曜日",
+    "meaning": "Friday",
+    "type": "Week Days",
+    "romaji": "kin-yōbi"
+  },
+  {
+    "symbol": "土曜日",
+    "meaning": "Saturday",
+    "type": "Week Days",
+    "romaji": "do-yōbi"
+  },
+  {
+    "symbol": "日",
+    "meaning": "Sun",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "月",
+    "meaning": "Moon",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "火",
+    "meaning": "Fire",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "水",
+    "meaning": "Water",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "木",
+    "meaning": "Wood",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "金",
+    "meaning": "Gold",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "土",
+    "meaning": "Earth",
+    "type": "Week Days Meaning"
+  },
+  {
+    "symbol": "一月",
+    "meaning": "January",
+    "type": "Months",
+    "romaji": "ichi-gatsu"
+  },
+  {
+    "symbol": "二月",
+    "meaning": "February",
+    "type": "Months",
+    "romaji": "ni-gatsu"
+  },
+  {
+    "symbol": "三月",
+    "meaning": "March",
+    "type": "Months",
+    "romaji": "san-gatsu"
+  },
+  {
+    "symbol": "四月",
+    "meaning": "April",
+    "type": "Months",
+    "romaji": "shi-gatsu"
+  },
+  {
+    "symbol": "五月",
+    "meaning": "May",
+    "type": "Months",
+    "romaji": "go-gatsu"
+  },
+  {
+    "symbol": "六月",
+    "meaning": "June",
+    "type": "Months",
+    "romaji": "roku-gatsu"
+  },
+  {
+    "symbol": "七月",
+    "meaning": "July",
+    "type": "Months",
+    "romaji": "shichi-gatsu"
+  },
+  {
+    "symbol": "八月",
+    "meaning": "August",
+    "type": "Months",
+    "romaji": "hachi-gatsu"
+  },
+  {
+    "symbol": "九月",
+    "meaning": "September",
+    "type": "Months",
+    "romaji": "ku-gatsu"
+  },
+  {
+    "symbol": "十月",
+    "meaning": "October",
+    "type": "Months",
+    "romaji": "jû-gatsu"
+  },
+  {
+    "symbol": "十一月",
+    "meaning": "November",
+    "type": "Months",
+    "romaji": "jûichi-gatsu"
+  },
+  {
+    "symbol": "十二月",
+    "meaning": "December",
+    "type": "Months",
+    "romaji": "jûni-gatsu"
+  },
+  {
+    "symbol": "今日",
+    "meaning": "Today",
+    "type": "Relative to Dates",
+    "romaji": "Kyō"
+  },
+  {
+    "symbol": "昨日",
+    "meaning": "Yesterday",
+    "type": "Relative to Dates",
+    "romaji": "Kinō"
+  },
+  {
+    "symbol": "一昨日",
+    "meaning": "Before Yesterday",
+    "type": "Relative to Dates",
+    "romaji": "Ototoi"
+  },
+  {
+    "symbol": "明日",
+    "meaning": "Tomorrow",
+    "type": "Relative to Dates",
+    "romaji": "Ashita"
+  },
+  {
+    "symbol": "明後日",
+    "meaning": "After Tomorrow",
+    "type": "Relative to Dates",
+    "romaji": "Asatte"
+  },
+  {
+    "symbol": "毎日",
+    "meaning": "Everyday",
+    "type": "Relative to Dates",
+    "romaji": "Mainichi"
+  },
+  {
+    "symbol": "平日",
+    "meaning": "Weekday",
+    "type": "Relative to Dates",
+    "romaji": "Heijitsu"
+  },
+  {
+    "symbol": "週末",
+    "meaning": "Weekend",
+    "type": "Relative to Dates",
+    "romaji": "Shūmatsu"
+  },
+  {
+    "symbol": "今週",
+    "meaning": "This week",
+    "type": "Relative to Dates",
+    "romaji": "Konshū"
+  },
+  {
+    "symbol": "先週",
+    "meaning": "Last week",
+    "type": "Relative to Dates",
+    "romaji": "Senshū"
+  },
+  {
+    "symbol": "先々週",
+    "meaning": "Before last week",
+    "type": "Relative to Dates",
+    "romaji": "Sensenshū"
+  },
+  {
+    "symbol": "来週",
+    "meaning": "Next week",
+    "type": "Relative to Dates",
+    "romaji": "Raishū"
+  },
+  {
+    "symbol": "再来週",
+    "meaning": "Next next week",
+    "type": "Relative to Dates",
+    "romaji": "Saraishū"
+  },
+  {
+    "symbol": "毎週",
+    "meaning": "Every Week",
+    "type": "Relative to Dates",
+    "romaji": "Maishū"
+  },
+  {
+    "symbol": "時",
+    "meaning": "Hour",
+    "type": "Time",
+    "romaji": "Ji"
+  },
+  {
+    "symbol": "一時",
+    "meaning": "one o'clock",
+    "type": "Time",
+    "romaji": "ichiji"
+  },
+  {
+    "symbol": "二時",
+    "meaning": "two o'clock",
+    "type": "Time",
+    "romaji": "niji"
+  },
+  {
+    "symbol": "分",
+    "meaning": "minute",
+    "type": "Time",
+    "romaji": "fun"
+  },
+  {
+    "symbol": "二時半",
+    "meaning": "two thirty",
+    "type": "Time",
+    "romaji": "nijihan"
+  },
+  {
+    "symbol": "二時四十五分",
+    "meaning": "2:45",
+    "type": "Time",
+    "romaji": "nijiyonjuugofun"
+  }
+]

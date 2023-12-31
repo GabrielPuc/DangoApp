@@ -1,0 +1,65 @@
+package com.gdbm.dangoapp.ui.components
+
+import android.content.res.Configuration
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
+
+@Composable
+fun DrawScreenContent(
+    currentOrientation: Int,
+    innerPadding: PaddingValues,
+    card: @Composable () -> Unit = {},
+    drawingPad: @Composable () -> Unit = {},
+    drawingControlBar: @Composable () -> Unit = {}
+) {
+    when (currentOrientation) {
+        Configuration.ORIENTATION_LANDSCAPE -> {
+            Row(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize(1f)
+                    .background(CustomColorsPalette.current.background),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                card()
+                drawingPad()
+                Column(modifier = Modifier.fillMaxHeight().padding(10.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                    drawingControlBar()
+                }
+            }
+        }
+
+        else -> {
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .background(CustomColorsPalette.current.background)
+                    .fillMaxHeight(1f),
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(modifier = Modifier.fillMaxWidth(1f), horizontalArrangement = Arrangement.Center) {
+                    card()
+                }
+                Row(modifier = Modifier.fillMaxWidth(1f)) {
+                    drawingPad()
+                }
+                Row(modifier = Modifier
+                    .fillMaxWidth(1f)
+                    .padding(start = 10.dp, end = 10.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    drawingControlBar()
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,522 @@
+[
+    {
+        "symbol": "あ",
+        "meaning": "a",
+        "type": "VOCALS"
+    },
+    {
+        "symbol": "い",
+        "meaning": "i",
+        "type": "VOCALS"
+    },
+    {
+        "symbol": "う",
+        "meaning": "u",
+        "type": "VOCALS"
+    },
+    {
+        "symbol": "え",
+        "meaning": "e",
+        "type": "VOCALS"
+    },
+    {
+        "symbol": "お",
+        "meaning": "o",
+        "type": "VOCALS"
+    },
+    {
+        "symbol": "か",
+        "meaning": "ka",
+        "type": "K"
+    },
+    {
+        "symbol": "き",
+        "meaning": "ki",
+        "type": "K"
+    },
+    {
+        "symbol": "く",
+        "meaning": "ku",
+        "type": "K"
+    },
+    {
+        "symbol": "け",
+        "meaning": "ke",
+        "type": "K"
+    },
+    {
+        "symbol": "こ",
+        "meaning": "ko",
+        "type": "K"
+    },
+    {
+        "symbol": "さ",
+        "meaning": "sa",
+        "type": "S"
+    },
+    {
+        "symbol": "し",
+        "meaning": "shi",
+        "type": "S"
+    },
+    {
+        "symbol": "す",
+        "meaning": "su",
+        "type": "S"
+    },
+    {
+        "symbol": "せ",
+        "meaning": "se",
+        "type": "S"
+    },
+    {
+        "symbol": "そ",
+        "meaning": "so",
+        "type": "S"
+    },
+    {
+        "symbol": "た",
+        "meaning": "ta",
+        "type": "T"
+    },
+    {
+        "symbol": "ち",
+        "meaning": "chi",
+        "type": "T"
+    },
+    {
+        "symbol": "つ",
+        "meaning": "tsu",
+        "type": "T"
+    },
+    {
+        "symbol": "て",
+        "meaning": "te",
+        "type": "T"
+    },
+    {
+        "symbol": "と",
+        "meaning": "to",
+        "type": "T"
+    },
+    {
+        "symbol": "な",
+        "meaning": "na",
+        "type": "N"
+    },
+    {
+        "symbol": "に",
+        "meaning": "ni",
+        "type": "N"
+    },
+    {
+        "symbol": "ぬ",
+        "meaning": "nu",
+        "type": "N"
+    },
+    {
+        "symbol": "ね",
+        "meaning": "ne",
+        "type": "N"
+    },
+    {
+        "symbol": "の",
+        "meaning": "no",
+        "type": "N"
+    },
+    {
+        "symbol": "は",
+        "meaning": "ha",
+        "type": "H"
+    },
+    {
+        "symbol": "ひ",
+        "meaning": "hi",
+        "type": "H"
+    },
+    {
+        "symbol": "ふ",
+        "meaning": "fu",
+        "type": "H"
+    },
+    {
+        "symbol": "へ",
+        "meaning": "he",
+        "type": "H"
+    },
+    {
+        "symbol": "ほ",
+        "meaning": "ho",
+        "type": "H"
+    },
+    {
+        "symbol": "ま",
+        "meaning": "ma",
+        "type": "M"
+    },
+    {
+        "symbol": "み",
+        "meaning": "mi",
+        "type": "M"
+    },
+    {
+        "symbol": "む",
+        "meaning": "mu",
+        "type": "M"
+    },
+    {
+        "symbol": "め",
+        "meaning": "me",
+        "type": "M"
+    },
+    {
+        "symbol": "も",
+        "meaning": "mo",
+        "type": "M"
+    },
+    {
+        "symbol": "や",
+        "meaning": "ya",
+        "type": "Y"
+    },
+    {
+        "symbol": "ゆ",
+        "meaning": "yu",
+        "type": "Y"
+    },
+    {
+        "symbol": "よ",
+        "meaning": "yo",
+        "type": "Y"
+    },
+    {
+        "symbol": "ら",
+        "meaning": "ra",
+        "type": "R"
+    },
+    {
+        "symbol": "り",
+        "meaning": "ri",
+        "type": "R"
+    },
+    {
+        "symbol": "る",
+        "meaning": "ru",
+        "type": "R"
+    },
+    {
+        "symbol": "れ",
+        "meaning": "re",
+        "type": "R"
+    },
+    {
+        "symbol": "ろ",
+        "meaning": "ro",
+        "type": "R"
+    },
+    {
+        "symbol": "わ",
+        "meaning": "wa",
+        "type": "W"
+    },
+    {
+        "symbol": "を",
+        "meaning": "wo",
+        "type": "W"
+    },
+    {
+        "symbol": "ん",
+        "meaning": "n",
+        "type": "N"
+    },
+    {
+        "symbol": "が",
+        "meaning": "ga",
+        "type": "G"
+    },
+    {
+        "symbol": "ぎ",
+        "meaning": "gi",
+        "type": "G"
+    },
+    {
+        "symbol": "ぐ",
+        "meaning": "gu",
+        "type": "G"
+    },
+    {
+        "symbol": "げ",
+        "meaning": "ge",
+        "type": "G"
+    },
+    {
+        "symbol": "ご",
+        "meaning": "go",
+        "type": "G"
+    },
+    {
+        "symbol": "ざ",
+        "meaning": "za",
+        "type": "Z"
+    },
+    {
+        "symbol": "じ",
+        "meaning": "ji",
+        "type": "Z"
+    },
+    {
+        "symbol": "ず",
+        "meaning": "zu",
+        "type": "Z"
+    },
+    {
+        "symbol": "ぜ",
+        "meaning": "ze",
+        "type": "Z"
+    },
+    {
+        "symbol": "ぞ",
+        "meaning": "zo",
+        "type": "Z"
+    },
+    {
+        "symbol": "だ",
+        "meaning": "da",
+        "type": "D"
+    },
+    {
+        "symbol": "ぢ",
+        "meaning": "ji",
+        "type": "D"
+    },
+    {
+        "symbol": "づ",
+        "meaning": "zu",
+        "type": "D"
+    },
+    {
+        "symbol": "で",
+        "meaning": "de",
+        "type": "D"
+    },
+    {
+        "symbol": "ど",
+        "meaning": "do",
+        "type": "D"
+    },
+    {
+        "symbol": "ば",
+        "meaning": "ba",
+        "type": "B"
+    },
+    {
+        "symbol": "び",
+        "meaning": "bi",
+        "type": "B"
+    },
+    {
+        "symbol": "ぶ",
+        "meaning": "bu",
+        "type": "B"
+    },
+    {
+        "symbol": "べ",
+        "meaning": "be",
+        "type": "B"
+    },
+    {
+        "symbol": "ぼ",
+        "meaning": "bo",
+        "type": "B"
+    },
+    {
+        "symbol": "ぱ",
+        "meaning": "pa",
+        "type": "P"
+    },
+    {
+        "symbol": "ぴ",
+        "meaning": "pi",
+        "type": "P"
+    },
+    {
+        "symbol": "ぷ",
+        "meaning": "pu",
+        "type": "P"
+    },
+    {
+        "symbol": "ぺ",
+        "meaning": "pe",
+        "type": "P"
+    },
+    {
+        "symbol": "ぽ",
+        "meaning": "po",
+        "type": "P"
+    },
+    {
+        "symbol": "きゃ",
+        "meaning": "kya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "きゅ",
+        "meaning": "kyu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "きょ",
+        "meaning": "kyo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぎゃ",
+        "meaning": "gya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぎゅ",
+        "meaning": "gyu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぎょ",
+        "meaning": "gyo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "しゃ",
+        "meaning": "sha",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "しゅ",
+        "meaning": "shu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "しょ",
+        "meaning": "sho",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "じゃ",
+        "meaning": "ja",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "じゅ",
+        "meaning": "ju",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "じょ",
+        "meaning": "jo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ちゃ",
+        "meaning": "cha",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ちゅ",
+        "meaning": "chu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ちょ",
+        "meaning": "cho",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "にゃ",
+        "meaning": "nya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "にゅ",
+        "meaning": "nyu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "にょ",
+        "meaning": "nyo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ひゃ",
+        "meaning": "hya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ひゅ",
+        "meaning": "hyu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ひょ",
+        "meaning": "hyo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "びゃ",
+        "meaning": "bya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "びゅ",
+        "meaning": "byu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "びょ",
+        "meaning": "byo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぴゃ",
+        "meaning": "pya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぴゅ",
+        "meaning": "pyu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "ぴょ",
+        "meaning": "pyo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "みゃ",
+        "meaning": "mya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "みゅ",
+        "meaning": "myu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "みょ",
+        "meaning": "myo",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "りゃ",
+        "meaning": "rya",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "りゅ",
+        "meaning": "ryu",
+        "type": "COMBINATIONS"
+    },
+    {
+        "symbol": "りょ",
+        "meaning": "ryo",
+        "type": "COMBINATIONS"
+    }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "symbol": "ア",
+    "meaning": "a",
+    "type": "KATAKANA VOCALS"
+  },
+  {
+    "symbol": "イ",
+    "meaning": "i",
+    "type": "KATAKANA VOCALS"
+  },
+  {
+    "symbol": "ウ",
+    "meaning": "u",
+    "type": "KATAKANA VOCALS"
+  },
+  {
+    "symbol": "エ",
+    "meaning": "e",
+    "type": "KATAKANA VOCALS"
+  },
+  {
+    "symbol": "オ",
+    "meaning": "o",
+    "type": "KATAKANA VOCALS"
+  },
+  {
+    "symbol": "カ",
+    "meaning": "ka",
+    "type": "KATAKANA K"
+  },
+  {
+    "symbol": "キ",
+    "meaning": "ki",
+    "type": "KATAKANA K"
+  },
+  {
+    "symbol": "ク",
+    "meaning": "ku",
+    "type": "KATAKANA K"
+  },
+  {
+    "symbol": "ケ",
+    "meaning": "ke",
+    "type": "KATAKANA K"
+  },
+  {
+    "symbol": "コ",
+    "meaning": "ko",
+    "type": "KATAKANA K"
+  },
+  {
+    "symbol": "サ",
+    "meaning": "sa",
+    "type": "KATAKANA S"
+  },
+  {
+    "symbol": "シ",
+    "meaning": "shi",
+    "type": "KATAKANA S"
+  },
+  {
+    "symbol": "ス",
+    "meaning": "su",
+    "type": "KATAKANA S"
+  },
+  {
+    "symbol": "セ",
+    "meaning": "se",
+    "type": "KATAKANA S"
+  },
+  {
+    "symbol": "ソ",
+    "meaning": "so",
+    "type": "KATAKANA S"
+  },
+  {
+    "symbol": "タ",
+    "meaning": "ta",
+    "type": "KATAKANA T"
+  },
+  {
+    "symbol": "チ",
+    "meaning": "chi",
+    "type": "KATAKANA T"
+  },
+  {
+    "symbol": "ツ",
+    "meaning": "tsu",
+    "type": "KATAKANA T"
+  },
+  {
+    "symbol": "テ",
+    "meaning": "te",
+    "type": "KATAKANA T"
+  },
+  {
+    "symbol": "ト",
+    "meaning": "to",
+    "type": "KATAKANA T"
+  },
+  {
+    "symbol": "ナ",
+    "meaning": "na",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ニ",
+    "meaning": "ni",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ヌ",
+    "meaning": "nu",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ネ",
+    "meaning": "ne",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ノ",
+    "meaning": "no",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ハ",
+    "meaning": "ha",
+    "type": "KATAKANA H"
+  },
+  {
+    "symbol": "ヒ",
+    "meaning": "hi",
+    "type": "KATAKANA H"
+  },
+  {
+    "symbol": "フ",
+    "meaning": "fu",
+    "type": "KATAKANA H"
+  },
+  {
+    "symbol": "ヘ",
+    "meaning": "he",
+    "type": "KATAKANA H"
+  },
+  {
+    "symbol": "ホ",
+    "meaning": "ho",
+    "type": "KATAKANA H"
+  },
+  {
+    "symbol": "マ",
+    "meaning": "ma",
+    "type": "KATAKANA M"
+  },
+  {
+    "symbol": "ミ",
+    "meaning": "mi",
+    "type": "KATAKANA M"
+  },
+  {
+    "symbol": "ム",
+    "meaning": "mu",
+    "type": "KATAKANA M"
+  },
+  {
+    "symbol": "メ",
+    "meaning": "me",
+    "type": "KATAKANA M"
+  },
+  {
+    "symbol": "モ",
+    "meaning": "mo",
+    "type": "KATAKANA M"
+  },
+  {
+    "symbol": "ヤ",
+    "meaning": "ya",
+    "type": "KATAKANA Y"
+  },
+  {
+    "symbol": "ユ",
+    "meaning": "yu",
+    "type": "KATAKANA Y"
+  },
+  {
+    "symbol": "ヨ",
+    "meaning": "yo",
+    "type": "KATAKANA Y"
+  },
+  {
+    "symbol": "ラ",
+    "meaning": "ra",
+    "type": "KATAKANA R"
+  },
+  {
+    "symbol": "リ",
+    "meaning": "ri",
+    "type": "KATAKANA R"
+  },
+  {
+    "symbol": "ル",
+    "meaning": "ru",
+    "type": "KATAKANA R"
+  },
+  {
+    "symbol": "レ",
+    "meaning": "re",
+    "type": "KATAKANA R"
+  },
+  {
+    "symbol": "ロ",
+    "meaning": "ro",
+    "type": "KATAKANA R"
+  },
+  {
+    "symbol": "ワ",
+    "meaning": "wa",
+    "type": "KATAKANA W"
+  },
+  {
+    "symbol": "ヲ",
+    "meaning": "wo",
+    "type": "KATAKANA W"
+  },
+  {
+    "symbol": "ン",
+    "meaning": "n",
+    "type": "KATAKANA N"
+  },
+  {
+    "symbol": "ガ",
+    "meaning": "ga",
+    "type": "KATAKANA G"
+  },
+  {
+    "symbol": "ギ",
+    "meaning": "gi",
+    "type": "KATAKANA G"
+  },
+  {
+    "symbol": "グ",
+    "meaning": "gu",
+    "type": "KATAKANA G"
+  },
+  {
+    "symbol": "ゲ",
+    "meaning": "ge",
+    "type": "KATAKANA G"
+  },
+  {
+    "symbol": "ゴ",
+    "meaning": "go",
+    "type": "KATAKANA G"
+  },
+  {
+    "symbol": "ザ",
+    "meaning": "za",
+    "type": "KATAKANA Z"
+  },
+  {
+    "symbol": "ジ",
+    "meaning": "ji",
+    "type": "KATAKANA Z"
+  },
+  {
+    "symbol": "ズ",
+    "meaning": "zu",
+    "type": "KATAKANA Z"
+  },
+  {
+    "symbol": "ゼ",
+    "meaning": "ze",
+    "type": "KATAKANA Z"
+  },
+  {
+    "symbol": "ゾ",
+    "meaning": "zo",
+    "type": "KATAKANA Z"
+  },
+  {
+    "symbol": "ダ",
+    "meaning": "da",
+    "type": "KATAKANA D"
+  },
+  {
+    "symbol": "ヂ",
+    "meaning": "ji",
+    "type": "KATAKANA D"
+  },
+  {
+    "symbol": "ヅ",
+    "meaning": "zu",
+    "type": "KATAKANA D"
+  },
+  {
+    "symbol": "デ",
+    "meaning": "de",
+    "type": "KATAKANA D"
+  },
+  {
+    "symbol": "ド",
+    "meaning": "do",
+    "type": "KATAKANA D"
+  },
+  {
+    "symbol": "バ",
+    "meaning": "ba",
+    "type": "KATAKANA B"
+  },
+  {
+    "symbol": "ビ",
+    "meaning": "bi",
+    "type": "KATAKANA B"
+  },
+  {
+    "symbol": "ブ",
+    "meaning": "bu",
+    "type": "KATAKANA B"
+  },
+  {
+    "symbol": "ベ ",
+    "meaning": "be",
+    "type": "KATAKANA B"
+  },
+  {
+    "symbol": "ボ",
+    "meaning": "bo",
+    "type": "KATAKANA B"
+  },
+  {
+    "symbol": "パ",
+    "meaning": "pa",
+    "type": "KATAKANA P"
+  },
+  {
+    "symbol": "ピ",
+    "meaning": "pi",
+    "type": "KATAKANA P"
+  },
+  {
+    "symbol": "プ",
+    "meaning": "pu",
+    "type": "KATAKANA P"
+  },
+  {
+    "symbol": "ペ",
+    "meaning": "pe",
+    "type": "KATAKANA P"
+  },
+  {
+    "symbol": "ポ",
+    "meaning": "po",
+    "type": "KATAKANA P"
+  },
+  {
+    "symbol": "キャ",
+    "meaning": "kya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "キュ",
+    "meaning": "kyu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "キョ",
+    "meaning": "kyo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ギャ",
+    "meaning": "gya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ギュ",
+    "meaning": "gyu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ギョ",
+    "meaning": "gyo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "シャ",
+    "meaning": "sha",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "シュ",
+    "meaning": "shu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ショ",
+    "meaning": "sho",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ジャ",
+    "meaning": "ja",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ジュ",
+    "meaning": "ju",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ジョ",
+    "meaning": "jo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "チャ",
+    "meaning": "cha",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "チュ",
+    "meaning": "chu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "チョ",
+    "meaning": "cho",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒャ",
+    "meaning": "nya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒュ",
+    "meaning": "nyu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒョ",
+    "meaning": "nyo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒャ",
+    "meaning": "hya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒュ",
+    "meaning": "hyu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ヒョ",
+    "meaning": "hyo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ビャ",
+    "meaning": "bya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ビュ",
+    "meaning": "byu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ビョ",
+    "meaning": "byo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ピャ",
+    "meaning": "pya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ピュ",
+    "meaning": "pyu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ピョ",
+    "meaning": "pyo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ミャ",
+    "meaning": "mya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ミュ",
+    "meaning": "myu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "ミョ",
+    "meaning": "myo",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "リャ",
+    "meaning": "rya",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "リュ",
+    "meaning": "ryu",
+    "type": "KATAKANA COMBINATIONS"
+  },
+  {
+    "symbol": "リョ",
+    "meaning": "ryo",
+    "type": "KATAKANA COMBINATIONS"
+  }
+]

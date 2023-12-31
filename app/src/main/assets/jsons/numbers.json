@@ -1,0 +1,104 @@
+[
+  {
+    "symbol": "一",
+    "meaning": "1",
+    "type": "Numbers",
+    "romaji": "ichi"
+  },
+  {
+    "symbol": "二",
+    "meaning": "2",
+    "type": "Numbers",
+    "romaji": "ni"
+  },
+  {
+    "symbol": "三",
+    "meaning": "3",
+    "type": "Numbers",
+    "romaji": "san"
+  },
+  {
+    "symbol": "四",
+    "meaning": "4",
+    "type": "Numbers",
+    "romaji": "shi / yon"
+  },
+  {
+    "symbol": "五",
+    "meaning": "5",
+    "type": "Numbers",
+    "romaji": "go"
+  },
+  {
+    "symbol": "六",
+    "meaning": "6",
+    "type": "Numbers",
+    "romaji": "roku"
+  },
+  {
+    "symbol": "七",
+    "meaning": "7",
+    "type": "Numbers",
+    "romaji": "shichi / nana"
+  },
+  {
+    "symbol": "八",
+    "meaning": "8",
+    "type": "Numbers",
+    "romaji": "hachi"
+  },
+  {
+    "symbol": "九",
+    "meaning": "9",
+    "type": "Numbers",
+    "romaji": "kyū / ku"
+  },
+  {
+    "symbol": "十",
+    "meaning": "10",
+    "type": "Numbers",
+    "romaji": "jū"
+  },
+  {
+    "symbol": "十[#]",
+    "meaning": "11 - 19 ",
+    "type": "Numbers",
+    "romaji": "jū [#]"
+  },
+  {
+    "symbol": "[#]十",
+    "meaning": "20 - 90",
+    "type": "Numbers",
+    "romaji": "[#] jū"
+  },
+  {
+    "symbol": "百",
+    "meaning": "100",
+    "type": "Numbers",
+    "romaji": "hyaku"
+  },
+  {
+    "symbol": "[#]百",
+    "meaning": "200 - 900",
+    "type": "Numbers",
+    "romaji": "[#] hyaku"
+  },
+  {
+    "symbol": "千",
+    "meaning": "1000",
+    "type": "Numbers",
+    "romaji": "sen"
+  },
+  {
+    "symbol": "[#]千",
+    "meaning": "2000 - 9000",
+    "type": "Numbers",
+    "romaji": "[#] sen"
+  },
+  {
+    "symbol": ":v",
+    "meaning": "pacman",
+    "type": "Exceptions",
+    "romaji": "no pos wow"
+  }
+]
