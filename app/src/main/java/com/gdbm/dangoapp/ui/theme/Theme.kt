@@ -14,7 +14,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = CustomPalette(
-    primary = MainColorDarker,//Purple40,
+    primary = MainColorDarker,
     secondary = GreenBackground,
     tertiary = GreenOk,
     background = BackgroundColorDark,
@@ -27,7 +27,7 @@ private val DarkColorScheme = CustomPalette(
 )
 
 private val LightColorScheme = CustomPalette(
-    primary = MainColor,//Purple40,
+    primary = MainColor,
     secondary = PinkBackground,
     tertiary = GreenOk,
     background = BackgroundColor,
@@ -40,69 +40,30 @@ private val LightColorScheme = CustomPalette(
 )
 
 private val DefaultDark = darkColorScheme(
-    primary = MainColorDarker,//Purple40,
+    primary = MainColorDarker,
     secondary = GreenBackground,
     tertiary = GreenOk,
     background = BackgroundColorDark
 )
 
 private val DefaultLight = lightColorScheme(
-    primary = MainColor,//Purple40,
+    primary = MainColor,
     secondary = PinkBackground,
     tertiary = GreenOk,
     background = BackgroundColor
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
 )
-
-/*private val DarkColorSchemea = darkColorScheme(
-    primary = MainColorDarker,//Purple40,
-    secondary = GreenBackground,
-    tertiary = GreenOk,
-    background = BackgroundColorDark
-)
-
-private val LightColorScheme = lightColorScheme(
-    primary = MainColor,//Purple40,
-    secondary = PinkBackground,
-    tertiary = GreenOk,
-    background = BackgroundColor
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
-)*/
 
 
 
 
 @Composable
-fun JapaneseTrainerTheme(
+fun DangoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
 
     val colorScheme = when {
-        /*dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }*/
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }

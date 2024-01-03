@@ -3,73 +3,68 @@ package com.gdbm.dangoapp.viewmodel
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gdbm.dangoapp.config.Configs.SYLLABARY_CONTENT
+import com.gdbm.dangoapp.config.Configs.SYLLABARY_ITEMS
+import com.gdbm.dangoapp.config.Configs.VOCABULARY_CONTENT
+import com.gdbm.dangoapp.config.Configs.VOCABULARY_ITEMS
 import com.gdbm.dangoapp.managers.ContentManager
-import com.gdbm.dangoapp.model.JapaneseWord
+import com.gdbm.dangoapp.model.Word
 import com.google.mlkit.vision.text.TextRecognizer
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 
 class ContentTrainingViewModel : ViewModel() {
 
-    val selectedWords = mutableListOf<JapaneseWord>()
-    private val previousWord = ArrayDeque(listOf<JapaneseWord>())
-    private lateinit var currentSymbol:JapaneseWord
-    private val selectedGroups = mutableListOf<String>()
-    private val selectedMainGroups = mutableListOf<String>()
-    private lateinit var textRecognizer : TextRecognizer
+    private val selectedWords = mutableListOf<Word>()
+    private val previousWord = ArrayDeque(listOf<Word>())
+    private lateinit var currentSymbol:Word
     lateinit var contentManager:ContentManager
-    val drawingPair = MutableLiveData<Pair<Bitmap,JapaneseWord>>()
+    val drawingPair = MutableLiveData<Pair<Bitmap,Word>>()
+    private val _selectedContentTypes = MutableStateFlow<List<String>>(mutableListOf())
+    val selectedContentTypes: StateFlow<List<String>>
+        get() = _selectedContentTypes
+
 
     fun setCurrentContentManager(contentManager: ContentManager){
         this.contentManager = contentManager
     }
 
-    fun setDefault(){
-        selectedGroups.clear()
-        selectedGroups.add("VOCALS")
-        selectedMainGroups.add("Hiragana")
-    }
 
-    fun setDefaultSingle(){
-        selectedGroups.clear()
-        contentManager.getHiraganaGroups().iterator().forEach {
-            selectedGroups.add(it.key)
-        }
-    }
-
-    fun setDefaultGeneral(){
-        selectedMainGroups.clear()
-        selectedMainGroups.add("Hiragana")
-    }
-
-    fun setDefaultVocabulary(){
-        selectedMainGroups.clear()
-        selectedMainGroups.add("Vocabulary")
-    }
-
-    fun setWords(){
-        selectedWords.clear()
-        selectedGroups.iterator().forEach {
-            selectedWords.addAll(contentManager.get(it))
-        }
-    }
-
-
-    fun setGeneralWords(){
-        selectedWords.clear()
-        selectedMainGroups.iterator().forEach {
-            when(it){
-                "Hiragana" -> {selectedWords.addAll(contentManager.getHiraganaGroups().values.flatten())}
-                "Katakana" -> {selectedWords.addAll(contentManager.getKatakanaGroups().values.flatten())}
+    fun createWordListFor(content:String?){
+        val wordList = mutableListOf<String>()
+        _selectedContentTypes.value = emptyList()
+        when (content){
+            SYLLABARY_CONTENT -> {
+                SYLLABARY_ITEMS.iterator().forEach {
+                    wordList.add(it)
+                    contentManager.retrieve(it)?.let { retrievedWords ->
+                        selectedWords.addAll(retrievedWords)
+                    }
+                }
             }
-            //selectedWords.addAll(contentManager.get(it))
+            VOCABULARY_CONTENT -> {
+                VOCABULARY_ITEMS.iterator().forEach {
+                    wordList.add(it)
+                    contentManager.retrieve(it)?.let { retrievedWords ->
+                        selectedWords.addAll(retrievedWords)
+                    }
+                }
+            }
+        }
+        _selectedContentTypes.value = wordList
+    }
+
+    fun setWordsFromSelectedContent(){
+        selectedWords.clear()
+        _selectedContentTypes.value.iterator().forEach {
+            contentManager.retrieve(it)?.let { retrievedWords ->
+                selectedWords.addAll(retrievedWords)
+            }
         }
     }
 
-    fun setVocabulary(){
-        selectedWords.clear()
-        selectedWords.addAll(contentManager.getVocabularyGroups().values.flatten())
-    }
-
-    fun getRandomWord() : JapaneseWord {
+    fun getRandomWord() : Word {
         currentSymbol = selectedWords.random()
         while (previousWord.contains(currentSymbol)) {
             currentSymbol = selectedWords.random()
@@ -81,43 +76,27 @@ class ContentTrainingViewModel : ViewModel() {
         return currentSymbol
     }
 
-    fun getRandomWordWithOptions() : List<JapaneseWord> {
+    fun getRandomWordWithOptions() : List<Word> {
         return selectedWords.asSequence().shuffled().take(4).toList().shuffled()
     }
 
-    fun handleSelection(correct:String, selected:String):Boolean{
-        if(correct == selected){
-            return true
-        }else{
-            return false
+    fun addContentTypeToSelected(contentType: String){
+        _selectedContentTypes.update {
+            it + contentType
         }
     }
 
-    fun addToSelected(group: String){
-        selectedGroups.add(group)
+    fun removeContentTypeFromSelected(contentType: String){
+        _selectedContentTypes.update {
+            it.filterNot { content -> content == contentType }
+        }
+    }
+    fun containsContentType(contentType: String):Boolean{
+        return _selectedContentTypes.value.contains(contentType)
     }
 
-    fun removeFromSelected(group: String){
-        selectedGroups.remove(group)
-    }
 
-    fun addGeneralToSelected(group: String){
-        selectedMainGroups.add(group)
-    }
-
-    fun removeGeneralFromSelected(group: String){
-        selectedMainGroups.remove(group)
-    }
-
-    fun containsGroup(group: String):Boolean{
-        return selectedGroups.contains(group)
-    }
-
-    fun containsMainGroup(group: String):Boolean{
-        return selectedMainGroups.contains(group)
-    }
-
-    fun analyzeImage(drawing: Bitmap, symbol: JapaneseWord){
+    fun analyzeImage(drawing: Bitmap, symbol: Word){
         drawingPair.value = Pair(drawing,symbol)
     }
 

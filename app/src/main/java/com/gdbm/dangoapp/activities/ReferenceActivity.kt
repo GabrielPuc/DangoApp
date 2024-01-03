@@ -13,7 +13,7 @@ import com.gdbm.dangoapp.managers.FileManager
 import com.gdbm.dangoapp.model.Word
 import com.gdbm.dangoapp.ui.screens.Reference
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
-import com.gdbm.dangoapp.ui.theme.JapaneseTrainerTheme
+import com.gdbm.dangoapp.ui.theme.DangoTheme
 import java.util.Locale
 
 class ReferenceActivity : ComponentActivity() {
@@ -38,7 +38,7 @@ class ReferenceActivity : ComponentActivity() {
         }
 
         setContent {
-            JapaneseTrainerTheme {
+            DangoTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = CustomColorsPalette.current.background
@@ -55,7 +55,7 @@ class ReferenceActivity : ComponentActivity() {
 
         val optionSelected = Configs.MENU_OPTIONS.firstOrNull { element-> element.content == contentType }
         optionSelected?.let {
-            content = ContentManager.getInstance(applicationContext).load(optionSelected.content!!)!!.groupBy{ it.group }
+            content = ContentManager.getInstance(applicationContext).retrieve(optionSelected.content!!)!!.groupBy{ it.group }
             screenTitle = optionSelected.name
         }
 

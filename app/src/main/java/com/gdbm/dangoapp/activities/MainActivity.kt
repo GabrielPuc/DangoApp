@@ -2,6 +2,7 @@ package com.gdbm.dangoapp.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,7 +15,7 @@ import com.gdbm.dangoapp.config.Configs
 import com.gdbm.dangoapp.managers.ContentManager
 import com.gdbm.dangoapp.ui.screens.Main
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
-import com.gdbm.dangoapp.ui.theme.JapaneseTrainerTheme
+import com.gdbm.dangoapp.ui.theme.DangoTheme
 import com.gdbm.dangoapp.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -24,10 +25,8 @@ class MainActivity : ComponentActivity() {
         mainViewModel =
             ViewModelProvider(this)[MainViewModel::class.java]
         mainViewModel.loadAllContent(this@MainActivity)
-        val contentManager = ContentManager.getInstance(applicationContext)
-        contentManager.loadAllContent()
         setContent {
-            JapaneseTrainerTheme {
+            DangoTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = CustomColorsPalette.current.background
@@ -42,8 +41,14 @@ class MainActivity : ComponentActivity() {
             val optionSelected = Configs.MENU_OPTIONS.firstOrNull { element-> element.name == selected }
             optionSelected?.let {
                 val intent = Intent(this@MainActivity,optionSelected.java as Class<*>)
+                optionSelected.experimentalEnabled?.let {
+                    intent.putExtra("EXPERIMENTAL_ENABLED",it)
+                }
                 optionSelected.content?.let {
                     intent.putExtra("CONTENT",it)
+                }
+                optionSelected.isLargeContent?.let {
+                    intent.putExtra("LARGE_CONTENT",it)
                 }
                 startActivity(intent)
             }

@@ -47,9 +47,14 @@ import kotlin.concurrent.schedule
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WriteTraining(screenTitle:String, contentTrainingViewModel:ContentTrainingViewModel, shouldShowFilter:Boolean){
+fun WriteTraining(
+    screenTitle:String,
+    contentTrainingViewModel:ContentTrainingViewModel,
+    shouldShowFilter:Boolean,
+    contentType:String
+){
 
-    var cardFace by remember {
+    val cardFace by remember {
         mutableStateOf(CardFace.Front)
     }
 
@@ -137,15 +142,6 @@ fun WriteTraining(screenTitle:String, contentTrainingViewModel:ContentTrainingVi
                             overflow = TextOverflow.Visible,
                             style = MaterialTheme.typography.body1,
                         )
-                        /*Text(
-                            text = wordOptions[correctAnswerIndex].meaning ,
-                            fontSize = 120.sp,
-                            color = TextColor,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth(1f)
-                                .align(Alignment.Center),
-                            maxLines = 1)*/
                     }
 
                 })
@@ -161,7 +157,7 @@ fun WriteTraining(screenTitle:String, contentTrainingViewModel:ContentTrainingVi
                             Button(
                                 onClick = {
                                     selected = it.symbol
-                                    Timer("SettingUp", false).schedule(1500) {
+                                    Timer("SettingUp", false).schedule(1000) {
                                         selected = ""
                                         wordOptions = contentTrainingViewModel.getRandomWordWithOptions()
                                         correctAnswerIndex = (0..3).random()
@@ -189,12 +185,12 @@ fun WriteTraining(screenTitle:String, contentTrainingViewModel:ContentTrainingVi
 
         when {
             openSelectorDialog.value -> {
-                ContentSelectorDialog(viewModel = contentTrainingViewModel, onDismissRequest = {
+                ContentSelectorDialog(viewModel = contentTrainingViewModel, content=contentType ,onDismissRequest = {
                     openSelectorDialog.value = false
                 }) {
 
                     openSelectorDialog.value = false
-                    contentTrainingViewModel.setGeneralWords()
+                    contentTrainingViewModel.setWordsFromSelectedContent()
                     wordOptions = contentTrainingViewModel.getRandomWordWithOptions()
                     correctAnswerIndex = (0..3).random()
 

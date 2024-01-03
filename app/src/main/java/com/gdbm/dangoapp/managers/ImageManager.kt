@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.gdbm.dangoapp.model.JapaneseWord
+import com.gdbm.dangoapp.model.Word
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognizer
@@ -15,7 +16,7 @@ class ImageManager (val context: Context, private val textRecognizer: TextRecogn
 
     private val resultStatus = MutableLiveData<Int>()
 
-    fun analyzeImageWith(drawing: Bitmap, symbol: JapaneseWord):Int{
+    fun analyzeImageWith(drawing: Bitmap, symbol: Word):Int{
         val scaled = scaleDownBitmapByMaxSize(drawing,480)
         saveDrawing(scaled,context)
         val inputImage = InputImage.fromBitmap(scaled!!, 0)

@@ -33,7 +33,7 @@ import com.gdbm.dangoapp.ui.components.DrawScreenContent
 import com.gdbm.dangoapp.ui.components.common.CardFace
 import com.gdbm.dangoapp.ui.components.common.FlippableCard
 import com.gdbm.dangoapp.ui.components.common.NavBar
-import com.gdbm.dangoapp.ui.components.dialogs.ListSelectorDialog
+import com.gdbm.dangoapp.ui.components.dialogs.ContentSelectorDialog
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 
@@ -43,7 +43,8 @@ fun DrawTraining(
     drawingManager: DrawingManager,
     contentTrainingViewModel: ContentTrainingViewModel,
     screenTitle: String,
-    isExperimentalEnabled: Boolean
+    isExperimentalEnabled: Boolean,
+    contentType: String
 ) {
 
     val undoVisibility = remember { mutableStateOf(false) }
@@ -158,11 +159,11 @@ fun DrawTraining(
 
         when {
             openSelectorDialog.value -> {
-                ListSelectorDialog(viewModel = contentTrainingViewModel, onDismissRequest = {
+                ContentSelectorDialog(viewModel = contentTrainingViewModel, content=contentType, onDismissRequest = {
                     openSelectorDialog.value = false
                 }) {
                     openSelectorDialog.value = false
-                    contentTrainingViewModel.setWords()
+                    contentTrainingViewModel.setWordsFromSelectedContent()
                     cardFace = CardFace.Front
                     drawingManager.reset()
                     currentSymbol = contentTrainingViewModel.getRandomWord()

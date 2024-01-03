@@ -29,7 +29,7 @@ fun Main(mainViewModel: MainViewModel, screenTitle:String) {
             LazyVerticalGrid(columns = GridCells.Adaptive(300.dp)) {
                 Configs.MENU_OPTIONS.forEach { menuOption ->
                     item {
-                        MenuItem(title = menuOption.name) {
+                        MenuItem(title = menuOption.name, subtitle = menuOption.subtitle) {
                             mainViewModel.actionSelected.value = menuOption.name
                         }
                     }

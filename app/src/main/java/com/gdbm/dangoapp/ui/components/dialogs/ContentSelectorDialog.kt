@@ -1,5 +1,6 @@
 package com.gdbm.dangoapp.ui.components.dialogs
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,22 +15,38 @@ import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import com.gdbm.dangoapp.config.Configs
 import com.gdbm.dangoapp.ui.components.items.SettingItem
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 
 @Composable
 fun ContentSelectorDialog(
     viewModel: ContentTrainingViewModel,
+    content:String,
     onDismissRequest: () -> Unit,
     onConfirmation: () -> Unit,
 ) {
+    val items = when (content){
+        Configs.SYLLABARY_CONTENT -> {
+            Configs.SYLLABARY_ITEMS
+        }
+        Configs.VOCABULARY_CONTENT -> {
+            Configs.VOCABULARY_ITEMS
+        }
+        else -> {
+            emptyList()
+        }
+    }
     val scrollState = rememberScrollState()
-    val dialogSize  = (LocalConfiguration.current.screenWidthDp * 0.5).dp
+    val dialogSize  = (LocalConfiguration.current.screenHeightDp * ((0.1) * items.size)).dp
+    val word = mutableListOf<String>()
+    val contentSelected = viewModel.selectedContentTypes.collectAsState()
     Dialog(onDismissRequest = { onDismissRequest() }) {
         Card(
             modifier = Modifier
@@ -42,19 +59,22 @@ fun ContentSelectorDialog(
                 modifier = Modifier
                     .fillMaxSize()
                     .verticalScroll(scrollState),
-                verticalArrangement = Arrangement.Center,
+                verticalArrangement = Arrangement.SpaceBetween,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
 
-                val allGroups = viewModel.contentManager.getGeneralGroups()
 
-                allGroups.iterator().forEach {
-                    val typeName = it.key
-                    SettingItem(typeName , viewModel.containsMainGroup(typeName )) { selected ->
-                        if(selected){
-                            viewModel.addGeneralToSelected(typeName )
-                        }else{
-                            viewModel.removeGeneralFromSelected(typeName )
+                Column {
+                    items.iterator().forEach {
+                        val typeName = it
+                        SettingItem(typeName , viewModel.containsContentType(typeName)) { selected ->
+                            if(selected){
+                                word.add(typeName)
+                                viewModel.addContentTypeToSelected(typeName )
+                            }else{
+                                word.remove(typeName)
+                                viewModel.removeContentTypeFromSelected(typeName )
+                            }
                         }
                     }
                 }
@@ -66,13 +86,14 @@ fun ContentSelectorDialog(
                 ) {
                     TextButton(
                         onClick = { onDismissRequest() },
-                        modifier = Modifier.padding(8.dp),
+                        modifier = Modifier.padding(8.dp)
                     ) {
                         Text("Cancel")
                     }
                     TextButton(
                         onClick = { onConfirmation() },
                         modifier = Modifier.padding(8.dp),
+                        enabled = contentSelected.value.isNotEmpty(),
                     ) {
                         Text("Ok")
                     }

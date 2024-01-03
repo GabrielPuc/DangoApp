@@ -1,6 +1,7 @@
 package com.gdbm.dangoapp.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,7 +14,7 @@ import com.gdbm.dangoapp.managers.ImageManager
 import com.gdbm.dangoapp.managers.drawing.rememberDrawingManager
 import com.gdbm.dangoapp.ui.screens.DrawTraining
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
-import com.gdbm.dangoapp.ui.theme.JapaneseTrainerTheme
+import com.gdbm.dangoapp.ui.theme.DangoTheme
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.CORRECT
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.DEFAULT
@@ -25,22 +26,24 @@ import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions
 
 class DrawPracticeActivity : ComponentActivity() {
 
+    private var contentType:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val isExperimentalEnabled = intent.getBooleanExtra("EXPERIMENTAL_ENABLED", false)
+        contentType = intent.getStringExtra("CONTENT")!!
         val contentTrainingViewModel =
             ViewModelProvider(this)[ContentTrainingViewModel::class.java]
         val contentManager = ContentManager.getInstance(applicationContext)
         contentTrainingViewModel.setCurrentContentManager(contentManager)
-        contentTrainingViewModel.setDefault()
-        contentTrainingViewModel.setWords()
+        contentTrainingViewModel.createWordListFor(contentType)
         val recognizer = TextRecognition.getClient(JapaneseTextRecognizerOptions.Builder().build())
         val imageManager = ImageManager(
             context = this@DrawPracticeActivity,
             textRecognizer = recognizer)
 
         setContent {
-            JapaneseTrainerTheme {
+            DangoTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = CustomColorsPalette.current.background
@@ -52,7 +55,9 @@ class DrawPracticeActivity : ComponentActivity() {
                         drawingManager = drawManager,
                         contentTrainingViewModel = contentTrainingViewModel,
                         screenTitle = "Practice",
-                        isExperimentalEnabled = isExperimentalEnabled)
+                        isExperimentalEnabled = isExperimentalEnabled,
+                        contentType = contentType
+                    )
                 }
             }
         }
