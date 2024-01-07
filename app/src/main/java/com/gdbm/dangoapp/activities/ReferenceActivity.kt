@@ -7,7 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.gdbm.dangoapp.config.Configs
+import com.gdbm.dangoapp.utils.Configs
 import com.gdbm.dangoapp.managers.ContentManager
 import com.gdbm.dangoapp.managers.FileManager
 import com.gdbm.dangoapp.model.Word

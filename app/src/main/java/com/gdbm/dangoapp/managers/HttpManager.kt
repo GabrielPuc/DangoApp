@@ -4,6 +4,7 @@ import android.util.Log
 import com.gdbm.dangoapp.model.ApiResponse
 import com.gdbm.dangoapp.model.ConfigResponse
 import com.gdbm.dangoapp.model.ContentResponse
+import com.gdbm.dangoapp.model.NewResponse
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.CoroutineScope
@@ -19,9 +20,45 @@ import java.net.URL
 
 class HttpManager {
 
-    fun asyncGetListRequest(
+    suspend fun getContentListRequest(
+        endpoint: String
+    ): NewResponse<List<ContentResponse>> {
+        return withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
+            val url = URL(endpoint)
+            val openedConnection =
+                withContext(Dispatchers.IO) {
+                    url.openConnection()
+                } as HttpURLConnection
+            openedConnection.requestMethod = GET
+
+            val responseCode = openedConnection.responseCode
+            if(responseCode != 200){
+                return@withContext NewResponse(false, emptyList())
+            }
+            try {
+                val reader = BufferedReader(InputStreamReader(openedConnection.inputStream))
+                val response = reader.readText()
+                val apiNewResponse = NewResponse(
+                    true,
+                    getList(response, ContentResponse::class.java)
+                )
+                print(response)
+                withContext(Dispatchers.IO) {
+                    reader.close()
+                }
+                apiNewResponse
+            } catch (e: Exception) {
+                Log.d("Error", e.message.toString())
+                NewResponse(false, emptyList())
+            } finally {
+
+            }
+        }
+    }
+
+    fun asyncGetContentRequest(
         endpoint: String,
-        onSuccess: (ApiResponse<List<ContentResponse>>) -> Unit,
+        onSuccess: (ApiResponse<ContentResponse>) -> Unit,
         onError: (Exception) -> Unit
     ) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -38,7 +75,7 @@ class HttpManager {
                 val response = reader.readText()
                 val apiResponse = ApiResponse(
                     responseCode,
-                    getList(response,ContentResponse::class.java)
+                    parseJson<ContentResponse>(response)
                 )
                 print(response)
                 withContext(Dispatchers.IO) {

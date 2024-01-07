@@ -5,15 +5,17 @@ data class ApiResponse<T>(
     val response: T
 )
 
-data class ListResponse(
-    val content: List<Word>
+data class NewResponse<T>(
+    val success: Boolean,
+    val response: T
 )
 
 data class ConfigResponse(
-    val content: ConfigModel
+    val content: List<ConfigModel>
 )
 
 data class ContentResponse(
     val content: List<Word>,
-    val name:String
+    val name:String,
+    val version:Double
 )

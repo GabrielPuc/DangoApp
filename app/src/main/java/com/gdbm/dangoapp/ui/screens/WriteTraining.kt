@@ -149,11 +149,7 @@ fun WriteTraining(
             LazyVerticalGrid(columns = GridCells.Adaptive(200.dp), modifier = Modifier.padding(top = 100.dp)){
                 if(wordOptions.isNotEmpty()){
                     wordOptions.iterator().forEach {
-                        //var backgroundColor = MainColor
                         item {
-                            var backgroundColor by remember {
-                                mutableStateOf(MainColor)
-                            }
                             Button(
                                 onClick = {
                                     selected = it.symbol

@@ -3,13 +3,12 @@ package com.gdbm.dangoapp.viewmodel
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gdbm.dangoapp.config.Configs.SYLLABARY_CONTENT
-import com.gdbm.dangoapp.config.Configs.SYLLABARY_ITEMS
-import com.gdbm.dangoapp.config.Configs.VOCABULARY_CONTENT
-import com.gdbm.dangoapp.config.Configs.VOCABULARY_ITEMS
+import com.gdbm.dangoapp.utils.Configs.SYLLABARY_CONTENT
+import com.gdbm.dangoapp.utils.Configs.SYLLABARY_ITEMS
+import com.gdbm.dangoapp.utils.Configs.VOCABULARY_CONTENT
+import com.gdbm.dangoapp.utils.Configs.VOCABULARY_ITEMS
 import com.gdbm.dangoapp.managers.ContentManager
 import com.gdbm.dangoapp.model.Word
-import com.google.mlkit.vision.text.TextRecognizer
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

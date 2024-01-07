@@ -1,4 +1,4 @@
-package com.gdbm.dangoapp.config
+package com.gdbm.dangoapp.utils
 
 import com.gdbm.dangoapp.activities.DrawPracticeActivity
 import com.gdbm.dangoapp.activities.ReferenceActivity
@@ -76,6 +76,8 @@ object Configs{
     val SYLLABARY_ITEMS = listOf("hiragana","katakana")
     val VOCABULARY_ITEMS = listOf("numbers","dates")
     const val ALL_CONTENT = "allContent"
+    const val CONTENT_FOR_ = "contentFor"
+    const val CONFIGURATIONS_FOR_ = "configurationsFor"
     const val SYLLABARY_CONTENT = "syllabaryPractice"
     const val VOCABULARY_CONTENT = "vocabularyPractice"
 }

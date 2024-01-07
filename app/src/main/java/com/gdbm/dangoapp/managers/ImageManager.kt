@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.gdbm.dangoapp.model.JapaneseWord
 import com.gdbm.dangoapp.model.Word
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 import com.google.mlkit.vision.common.InputImage
