@@ -2,6 +2,7 @@ package com.gdbm.dangoapp.activities
 
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -52,12 +53,20 @@ class ReferenceActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-
         val optionSelected = Configs.MENU_OPTIONS.firstOrNull { element-> element.content == contentType }
         optionSelected?.let {
             content = ContentManager.getInstance(applicationContext).retrieve(optionSelected.content!!)!!.groupBy{ it.group }
             screenTitle = optionSelected.name
         }
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            tts.stop()
+            tts.shutdown()
+        } catch (e:Exception) {
+            Log.e("ERROR",e.toString())
+        }
     }
 }

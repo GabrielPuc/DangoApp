@@ -2,12 +2,16 @@ package com.gdbm.dangoapp.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.gdbm.dangoapp.R
 import com.gdbm.dangoapp.managers.ContentManager
 import com.gdbm.dangoapp.utils.Configs
@@ -15,6 +19,7 @@ import com.gdbm.dangoapp.ui.screens.Main
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.ui.theme.DangoTheme
 import com.gdbm.dangoapp.viewmodel.MainViewModel
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     private lateinit var mainViewModel:MainViewModel
@@ -37,21 +42,33 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        mainViewModel.actionSelected.observe(this) { selected ->
-            val optionSelected =
-                Configs.MENU_OPTIONS.firstOrNull { element -> element.name == selected }
-            optionSelected?.let {
-                val intent = Intent(this@MainActivity, optionSelected.java as Class<*>)
-                optionSelected.experimentalEnabled?.let {
-                    intent.putExtra("EXPERIMENTAL_ENABLED", it)
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                mainViewModel.menuItemsEventsFlow.collect { selected ->
+                    when(selected.action) {
+                        "SETTINGS" -> {
+                            val intent = Intent(this@MainActivity, SettingsActivity::class.java)
+                            startActivity(intent)
+                        }
+                        else -> {
+                            val optionSelected =
+                                Configs.MENU_OPTIONS.firstOrNull { element -> element.name == selected.action }
+                            optionSelected?.let {
+                                val intent = Intent(this@MainActivity, optionSelected.java as Class<*>)
+                                optionSelected.experimentalEnabled?.let {
+                                    intent.putExtra("EXPERIMENTAL_ENABLED", it)
+                                }
+                                optionSelected.content?.let {
+                                    intent.putExtra("CONTENT", it)
+                                }
+                                optionSelected.isLargeContent?.let {
+                                    intent.putExtra("LARGE_CONTENT", it)
+                                }
+                                startActivity(intent)
+                            }
+                        }
+                    }
                 }
-                optionSelected.content?.let {
-                    intent.putExtra("CONTENT", it)
-                }
-                optionSelected.isLargeContent?.let {
-                    intent.putExtra("LARGE_CONTENT", it)
-                }
-                startActivity(intent)
             }
         }
     }
@@ -70,11 +87,5 @@ class MainActivity : ComponentActivity() {
             mainViewModel.contentItsLoading(false)
         }
 
-    }
-
-    @Override
-    override fun onPause() {
-        super.onPause()
-        mainViewModel.actionSelected.value = ""
     }
 }
