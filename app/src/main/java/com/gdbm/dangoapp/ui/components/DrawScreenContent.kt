@@ -1,6 +1,7 @@
 package com.gdbm.dangoapp.ui.components
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +12,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 
@@ -34,8 +37,16 @@ fun DrawScreenContent(
             ) {
                 card()
                 drawingPad()
-                Column(modifier = Modifier.fillMaxHeight().padding(10.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
-                    drawingControlBar()
+                if(isTablet()){
+                    Column(modifier = Modifier.fillMaxHeight().padding(10.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+                        drawingControlBar()
+                    }
+                } else {
+                    Row(modifier = Modifier
+                        .fillMaxHeight(1f)
+                        .padding(start = 10.dp, end = 10.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
+                        drawingControlBar()
+                    }
                 }
             }
         }
@@ -61,5 +72,15 @@ fun DrawScreenContent(
                 }
             }
         }
+    }
+}
+
+@Composable
+fun isTablet(): Boolean {
+    val configuration = LocalConfiguration.current
+    return if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        configuration.screenWidthDp > 840
+    } else {
+        configuration.screenWidthDp > 600
     }
 }

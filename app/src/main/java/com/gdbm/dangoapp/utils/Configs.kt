@@ -5,7 +5,7 @@ import com.gdbm.dangoapp.activities.ReferenceActivity
 import com.gdbm.dangoapp.activities.WritingPracticeActivity
 
 object Configs{
-    const val ENDPOINT = ""
+    const val ENDPOINT = "https://4xmbrnizekycnz7vzdi76ewyyq0ilzfh.lambda-url.us-east-2.on.aws"
     data class MenuElement(
         val name: String,
         val subtitle: String? = null,

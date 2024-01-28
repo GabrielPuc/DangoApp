@@ -23,6 +23,9 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -119,69 +122,64 @@ fun Reference(
                     }
 
                     item {
-                        androidx.compose.material.Card(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .animateContentSize(
-                                    animationSpec = tween(
-                                        durationMillis = 200, easing = LinearOutSlowInEasing
-                                    )
-                                ), shape = RoundedCornerShape(0.dp)
+                        Column(
+                            modifier = Modifier.fillMaxWidth().animateContentSize(
+                                animationSpec = tween(
+                                    durationMillis = 200, easing = LinearOutSlowInEasing
+                                )
+                            )
                         ) {
-                            Column(
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                if (indexSelected.contains(index)) {
-                                    Box(modifier = Modifier.background(CustomColorsPalette.current.background)) {
+                            if (indexSelected.contains(index)) {
+                                Box(modifier = Modifier.background(CustomColorsPalette.current.background)) {
 
-                                        Column {
-                                            entry.second.chunked(itemsInRow).iterator()
-                                                .forEach { chunk ->
-                                                    Row(
-                                                        modifier = Modifier.fillMaxWidth(1f),
-                                                        horizontalArrangement = Arrangement.SpaceEvenly
-                                                    ) {
-                                                        chunk.iterator().forEach { word ->
-                                                            ElevatedCard(modifier = Modifier
-                                                                .width(
-                                                                    if (itemsInRow == 1) {
-                                                                        screenWidth.dp
-                                                                    } else {
-                                                                        widthOfItem.dp
-                                                                    }
-                                                                )
-                                                                .padding(10.dp), onClick = {
-                                                                word.pronunciation?.let {
-                                                                    tts.speak(
-                                                                        word.pronunciation,
-                                                                        TextToSpeech.QUEUE_ADD,
-                                                                        null,
-                                                                        ""
-                                                                    )
-                                                                } ?: run {
-                                                                    tts.speak(
-                                                                        word.symbol,
-                                                                        TextToSpeech.QUEUE_ADD,
-                                                                        null,
-                                                                        ""
-                                                                    )
+                                    Column {
+                                        entry.second.chunked(itemsInRow).iterator()
+                                            .forEach { chunk ->
+                                                Row(
+                                                    modifier = Modifier.fillMaxWidth(1f),
+                                                    horizontalArrangement = Arrangement.SpaceEvenly
+                                                ) {
+                                                    chunk.iterator().forEach { word ->
+                                                        ElevatedCard(modifier = Modifier
+                                                            .width(
+                                                                if (itemsInRow == 1) {
+                                                                    screenWidth.dp
+                                                                } else {
+                                                                    widthOfItem.dp
                                                                 }
-                                                            }) {
-                                                                MultilevelText(
-                                                                    firstLevel = word.symbol,
-                                                                    secondLevel = word.meaning,
-                                                                    thirdLevel = word.latinBased,
-                                                                    cardWidth = widthOfItem.dp
+                                                            )
+                                                            .padding(10.dp), onClick = {
+                                                            word.pronunciation?.let {
+                                                                tts.speak(
+                                                                    word.pronunciation,
+                                                                    TextToSpeech.QUEUE_ADD,
+                                                                    null,
+                                                                    ""
+                                                                )
+                                                            } ?: run {
+                                                                tts.speak(
+                                                                    word.symbol,
+                                                                    TextToSpeech.QUEUE_ADD,
+                                                                    null,
+                                                                    ""
                                                                 )
                                                             }
+                                                        }) {
+                                                            Icon(Icons.Filled.PlayArrow, "play")
+                                                            MultilevelText(
+                                                                firstLevel = word.symbol,
+                                                                secondLevel = word.meaning,
+                                                                thirdLevel = word.latinBased,
+                                                                cardWidth = widthOfItem.dp
+                                                            )
                                                         }
                                                     }
                                                 }
-                                        }
+                                            }
                                     }
                                 }
-
                             }
+
                         }
                     }
 

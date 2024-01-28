@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -24,6 +25,7 @@ import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gdbm.dangoapp.R
@@ -33,6 +35,8 @@ import com.gdbm.dangoapp.ui.components.DrawScreenContent
 import com.gdbm.dangoapp.ui.components.common.CardFace
 import com.gdbm.dangoapp.ui.components.common.FlippableCard
 import com.gdbm.dangoapp.ui.components.common.NavBar
+import com.gdbm.dangoapp.ui.components.common.ResizableText
+import com.gdbm.dangoapp.ui.components.common.TextSizeRange
 import com.gdbm.dangoapp.ui.components.dialogs.ContentSelectorDialog
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
@@ -76,40 +80,46 @@ fun DrawTraining(
         currentOrientation = LocalConfiguration.current.orientation
         DrawScreenContent(currentOrientation = currentOrientation, innerPadding = innerPadding, card = {
             var widthModifier = Modifier.height(140.dp).padding(10.dp)
-            if(currentOrientation == Configuration.ORIENTATION_LANDSCAPE){
-                widthModifier = widthModifier.then(Modifier.width(140.dp))
+            widthModifier = if(currentOrientation == Configuration.ORIENTATION_LANDSCAPE){
+                widthModifier.then(Modifier.width(140.dp))
             }else{
-                widthModifier = widthModifier.then(Modifier.wrapContentWidth())
+                widthModifier.then(Modifier.wrapContentWidth())
             }
             FlippableCard(modifier = widthModifier,
                 cardFace = cardFace,
-                onClick = { cardFace = cardFace.flip },
+                onClick = { if(!isExperimentalEnabled) cardFace = cardFace.flip },
                 front = {
                     Box(contentAlignment = Alignment.Center) {
-                        Text(
+                        ResizableText(
                             text = currentSymbol.meaning,
-                            fontSize = 60.sp,
+                            maxLines = 1,
+                            modifier = Modifier.fillMaxWidth(1f).align(Alignment.Center),
+                            textSizeRange = TextSizeRange(
+                                min = 40.sp,
+                                max = 80.sp,
+                                step = 10.sp
+                            ),
                             color = CustomColorsPalette.current.textColor,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth(1f)
-                                .align(Alignment.Center),
-                            maxLines = 1
+                            overflow = TextOverflow.Visible,
+                            style = MaterialTheme.typography.body1,
                         )
                     }
 
                 },
                 back = {
                     Box(contentAlignment = Alignment.Center) {
-                        Text(
+                        ResizableText(
                             text = currentSymbol.symbol,
-                            fontSize = 80.sp,
+                            maxLines = 1,
+                            modifier = Modifier.fillMaxWidth(1f).align(Alignment.Center),
+                            textSizeRange = TextSizeRange(
+                                min = 40.sp,
+                                max = 80.sp,
+                                step = 10.sp
+                            ),
                             color = CustomColorsPalette.current.textColor,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth(1f)
-                                .align(Alignment.Center),
-                            maxLines = 1
+                            overflow = TextOverflow.Visible,
+                            style = MaterialTheme.typography.body1,
                         )
                     }
 

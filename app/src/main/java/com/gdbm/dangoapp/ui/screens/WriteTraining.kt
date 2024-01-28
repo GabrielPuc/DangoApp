@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Button
@@ -17,7 +18,6 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -146,7 +146,9 @@ fun WriteTraining(
 
                 })
             
-            LazyVerticalGrid(columns = GridCells.Adaptive(200.dp), modifier = Modifier.padding(top = 100.dp)){
+            LazyVerticalGrid(columns = GridCells.Adaptive(200.dp), modifier = Modifier
+                .padding(top = 100.dp)
+                .widthIn(max = (200 * wordOptions.size).dp)){
                 if(wordOptions.isNotEmpty()){
                     wordOptions.iterator().forEach {
                         item {
@@ -165,12 +167,18 @@ fun WriteTraining(
                                 ),
                                 modifier = Modifier.padding(10.dp)
                             ) {
-                                Text(
+                                ResizableText(
                                     text = it.meaning,
-                                    fontSize = 22.sp,
-                                    style = MaterialTheme.typography.button,
+                                    maxLines = 1,
                                     modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
-                                    color = Color.White
+                                    textSizeRange = TextSizeRange(
+                                        min = 12.sp,
+                                        max = 22.sp,
+                                        step = 2.sp
+                                    ),
+                                    color = CustomColorsPalette.current.textColor,
+                                    overflow = TextOverflow.Visible,
+                                    style = MaterialTheme.typography.body1,
                                 )
                             }
                         }
