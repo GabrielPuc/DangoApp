@@ -80,4 +80,6 @@ object Configs{
     const val CONFIGURATIONS_FOR_ = "configurationsFor"
     const val SYLLABARY_CONTENT = "syllabaryPractice"
     const val VOCABULARY_CONTENT = "vocabularyPractice"
+
+    const val JAPANESE_HASH = "6c2050f8d0afa51826b04edae718b484"
 }

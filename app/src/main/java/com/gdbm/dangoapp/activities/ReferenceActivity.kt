@@ -66,7 +66,7 @@ class ReferenceActivity : ComponentActivity() {
             tts.stop()
             tts.shutdown()
         } catch (e:Exception) {
-            Log.e("ERROR",e.toString())
+            Log.e("TTS",e.toString())
         }
     }
 }

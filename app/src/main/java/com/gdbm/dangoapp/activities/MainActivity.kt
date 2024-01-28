@@ -2,7 +2,6 @@ package com.gdbm.dangoapp.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.gdbm.dangoapp.R
 import com.gdbm.dangoapp.managers.ContentManager
+import com.gdbm.dangoapp.managers.FileManager
 import com.gdbm.dangoapp.utils.Configs
 import com.gdbm.dangoapp.ui.screens.Main
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
@@ -30,6 +30,8 @@ class MainActivity : ComponentActivity() {
             ViewModelProvider(this)[MainViewModel::class.java]
         contentManager = ContentManager.getInstance(this)
         verifyContent()
+        val fileManager = FileManager(applicationContext = applicationContext)
+        fileManager.verifyTrainedModelsIntegrity()
         setContent {
             DangoTheme {
                 Surface(

@@ -42,13 +42,12 @@ class HttpManager {
                     true,
                     getList(response, ContentResponse::class.java)
                 )
-                print(response)
                 withContext(Dispatchers.IO) {
                     reader.close()
                 }
                 apiNewResponse
             } catch (e: Exception) {
-                Log.d("Error", e.message.toString())
+                Log.e("CONTENT LIST REQUEST", e.message.toString())
                 NewResponse(false, emptyList())
             } finally {
 
@@ -85,7 +84,7 @@ class HttpManager {
                     onSuccess(apiResponse)
                 }
             } catch (e: Exception) {
-                Log.d("Error", e.message.toString())
+                Log.e("CONTENT REQUEST", e.message.toString())
                 launch(Dispatchers.Main) {
                     onError(Exception("HTTP Request failed with response code $responseCode"))
                 }
@@ -124,7 +123,7 @@ class HttpManager {
                     onSuccess(apiResponse)
                 }
             } catch (e: Exception) {
-                Log.d("Error", e.message.toString())
+                Log.e("CONFIG REQUEST", e.message.toString())
                 launch(Dispatchers.Main) {
                     onError(Exception("HTTP Request failed with response code $responseCode"))
                 }

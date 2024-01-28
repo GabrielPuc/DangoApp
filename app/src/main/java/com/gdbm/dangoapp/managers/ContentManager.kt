@@ -86,8 +86,8 @@ class ContentManager private constructor(val context: Context) {
                 onSuccess = { objResponse ->
                     fileManager.writeFile(objResponse.response.name,gson.toJson(objResponse.response.content))
                 },
-                onError = {
-                    Log.e("ERROR",it.message.toString())
+                onError = { objError ->
+                    Log.e("GET CONTENT REQUEST",objError.message.toString())
                 }
             )
         }

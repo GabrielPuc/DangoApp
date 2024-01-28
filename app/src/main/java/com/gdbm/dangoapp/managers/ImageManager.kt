@@ -2,37 +2,28 @@ package com.gdbm.dangoapp.managers
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.gdbm.dangoapp.model.Word
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
-import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognizer
+//import com.google.mlkit.vision.common.InputImage
+import com.googlecode.tesseract.android.TessBaseAPI
 import java.io.File
 import java.io.FileOutputStream
 
-class ImageManager (val context: Context, private val textRecognizer: TextRecognizer) {
+class ImageManager (val context: Context, private val textRecognizer: TessBaseAPI) {
 
-    private val resultStatus = MutableLiveData<Int>()
+    private val resultStatus = MutableLiveData<Pair<Int,String?>>()
 
-    fun analyzeImageWith(drawing: Bitmap, symbol: Word):Int{
+    fun analyzeImageWith(drawing: Bitmap, symbol: Word):Pair<Int,String?>{
         val scaled = scaleDownBitmapByMaxSize(drawing,480)
-        saveDrawing(scaled,context)
-        val inputImage = InputImage.fromBitmap(scaled!!, 0)
-        val result = textRecognizer.process(inputImage)
-            .addOnSuccessListener { visionText ->
-                Log.d("VISION TEXT",visionText.text)
-                if(symbol.symbol == visionText.text){
-                    resultStatus.value = ContentTrainingViewModel.CORRECT
-                }else{
-                    resultStatus.value = ContentTrainingViewModel.WRONG
-                }
-            }
-            .addOnFailureListener { e ->
-                resultStatus.value = ContentTrainingViewModel.ERROR
-                Log.e("TEXT RECOGNIZER", e.toString())
-            }
-        return resultStatus.value ?: 0
+        textRecognizer.setImage(scaled)
+        val result = textRecognizer.utF8Text
+        resultStatus.value = when(result){
+            symbol.symbol -> Pair(ContentTrainingViewModel.CORRECT, null)
+            "" -> Pair(ContentTrainingViewModel.ERROR, null)
+            else -> Pair(ContentTrainingViewModel.WRONG, result)
+        }
+        return resultStatus.value ?: Pair(ContentTrainingViewModel.ERROR,null)
     }
 
     private fun saveDrawing(bitmap: Bitmap?, context: Context) {
@@ -78,5 +69,13 @@ class ImageManager (val context: Context, private val textRecognizer: TextRecogn
             width = max
         }
         return Bitmap.createScaledBitmap(bitmap, width, height, false)
+    }
+
+    fun initTesseracts() {
+        val dataPath = File(context.filesDir, "").absolutePath
+        if (!textRecognizer.init(dataPath, "jpn")) {
+            textRecognizer.recycle();
+            return;
+        }
     }
 }

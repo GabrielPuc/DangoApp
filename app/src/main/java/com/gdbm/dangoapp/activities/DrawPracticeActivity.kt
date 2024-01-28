@@ -1,6 +1,7 @@
 package com.gdbm.dangoapp.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,16 +17,17 @@ import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.ui.theme.DangoTheme
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.CORRECT
-import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.DEFAULT
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.ERROR
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel.Companion.WRONG
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions
+//import com.google.mlkit.vision.text.TextRecognition
+//import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions
+import com.googlecode.tesseract.android.TessBaseAPI
 
 
 class DrawPracticeActivity : ComponentActivity() {
 
     private var contentType:String = ""
+    private var tesseract:TessBaseAPI? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +38,11 @@ class DrawPracticeActivity : ComponentActivity() {
         val contentManager = ContentManager.getInstance(applicationContext)
         contentTrainingViewModel.setCurrentContentManager(contentManager)
         contentTrainingViewModel.createWordListFor(contentType)
-        val recognizer = TextRecognition.getClient(JapaneseTextRecognizerOptions.Builder().build())
+        tesseract = TessBaseAPI()
         val imageManager = ImageManager(
             context = this@DrawPracticeActivity,
-            textRecognizer = recognizer)
+            textRecognizer = tesseract!!)
+        imageManager.initTesseracts()
 
         setContent {
             DangoTheme {
@@ -62,11 +65,11 @@ class DrawPracticeActivity : ComponentActivity() {
         }
 
         contentTrainingViewModel.drawingPair.observe(this) { pair ->
-            val message = when (imageManager.analyzeImageWith(pair.first, pair.second)) {
-                DEFAULT -> ""
+            val imageAnalysisResult = imageManager.analyzeImageWith(pair.first, pair.second)
+            val message = when (imageAnalysisResult.first) {
                 CORRECT -> "Correct!"
-                WRONG -> "Oops, Wrong answer"
-                ERROR -> "Not recognized"
+                WRONG -> "Incorrect, Detected: ${imageAnalysisResult.second}"
+                ERROR -> "Drawing not recognized"
                 else -> ""
             }
             if(message.isNotBlank()) {
@@ -74,5 +77,14 @@ class DrawPracticeActivity : ComponentActivity() {
             }
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            tesseract!!.recycle()
+        } catch (exception:Exception) {
+            Log.e("TESSERACT",exception.message.toString())
+        }
     }
 }
