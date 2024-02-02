@@ -11,16 +11,22 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Slider
+import androidx.compose.material.SliderDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
@@ -39,6 +45,7 @@ import com.gdbm.dangoapp.ui.components.common.ResizableText
 import com.gdbm.dangoapp.ui.components.common.TextSizeRange
 import com.gdbm.dangoapp.ui.components.dialogs.ContentSelectorDialog
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
+import com.gdbm.dangoapp.utils.extensions.vertical
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,17 +60,16 @@ fun DrawTraining(
 
     val undoVisibility = remember { mutableStateOf(false) }
     val redoVisibility = remember { mutableStateOf(false) }
-    var cardFace by remember {
-        mutableStateOf(CardFace.Front)
-    }
-
-    var currentSymbol by remember {
-        mutableStateOf(contentTrainingViewModel.getRandomWord())
-    }
-
     val openSelectorDialog = remember { mutableStateOf(false) }
-
     var currentOrientation by remember { mutableStateOf(Configuration.ORIENTATION_PORTRAIT) }
+    var sliderPosition by remember { mutableFloatStateOf(80f) }
+    var cardFace by remember { mutableStateOf(CardFace.Front) }
+    var currentSymbol by remember { mutableStateOf(contentTrainingViewModel.getRandomWord()) }
+    val canvasSize = if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+        LocalConfiguration.current.screenHeightDp
+    } else {
+        LocalConfiguration.current.screenWidthDp
+    }
 
     Scaffold(
         topBar = {
@@ -77,6 +83,7 @@ fun DrawTraining(
 
         }
     ) { innerPadding ->
+
         currentOrientation = LocalConfiguration.current.orientation
         DrawScreenContent(currentOrientation = currentOrientation, innerPadding = innerPadding, card = {
             var widthModifier = Modifier.height(140.dp).padding(10.dp)
@@ -125,27 +132,55 @@ fun DrawTraining(
 
                 })
         }, drawingPad = {
-            val canvasSize = if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
-                LocalConfiguration.current.screenHeightDp
-            } else {
-                LocalConfiguration.current.screenWidthDp
-            }
 
-            DrawCanvas(drawingManager = drawingManager,
-                backgroundColor = CustomColorsPalette.current.backgroundCanvas,
-                modifier = Modifier
-                    .width(canvasSize.dp)
-                    .height(canvasSize.dp),
-                onSaveBitmap = { imageBitmap, error ->
-                    imageBitmap?.let {
-                        contentTrainingViewModel.analyzeImage(
-                            it.asAndroidBitmap(), currentSymbol
-                        )
-                    }
-                }) { undoCount, redoCount ->
-                undoVisibility.value = undoCount != 0
-                redoVisibility.value = redoCount != 0
+            Box(contentAlignment = Alignment.Center) {
+
+                DrawCanvas(drawingManager = drawingManager,
+                    backgroundColor = CustomColorsPalette.current.backgroundCanvas,
+                    modifier = Modifier
+                        .width(canvasSize.dp)
+                        .height(canvasSize.dp),
+                    onSaveBitmap = { imageBitmap, error ->
+                        imageBitmap?.let {
+                            contentTrainingViewModel.analyzeImage(
+                                it.asAndroidBitmap(), currentSymbol
+                            )
+                        }
+                    }) { undoCount, redoCount ->
+                    undoVisibility.value = undoCount != 0
+                    redoVisibility.value = redoCount != 0
+                }
+
+                if(!isExperimentalEnabled){
+                    ResizableText(
+                        text = currentSymbol.symbol,
+                        maxLines = 1,
+                        modifier = Modifier.width(canvasSize.dp).height(canvasSize.dp).alpha(0.5f),
+                        textSizeRange = TextSizeRange(
+                            min = 80.sp,
+                            max = canvasSize.sp,
+                            step = 20.sp
+                        ),
+                        color = CustomColorsPalette.current.textColor,
+                        overflow = TextOverflow.Visible,
+                        style = MaterialTheme.typography.body1.copy(background = Color.Transparent),
+                    )
+                }
             }
+        }, brushSize = {
+            Slider(
+                value = sliderPosition,
+                steps = 3,
+                valueRange = 20f .. 80f,
+                onValueChange = { sliderPosition = it; drawingManager.changeStrokeWidth(it) },
+                modifier = Modifier.width((canvasSize - 60).dp).height(10.dp),
+                colors = SliderDefaults.colors(
+                    thumbColor = CustomColorsPalette.current.contrastColor,
+                    disabledThumbColor = CustomColorsPalette.current.secondaryContainerColor,
+                    activeTrackColor = CustomColorsPalette.current.primaryContainerColor,
+                    inactiveTrackColor = CustomColorsPalette.current.secondaryContainerColor,
+                )
+            )
         }, drawingControlBar = {
             DrawingControlsBar(
                 drawController = drawingManager,
