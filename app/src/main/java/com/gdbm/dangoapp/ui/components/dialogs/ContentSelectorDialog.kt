@@ -1,5 +1,6 @@
 package com.gdbm.dangoapp.ui.components.dialogs
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.gdbm.dangoapp.utils.Configs
 import com.gdbm.dangoapp.ui.components.items.SettingItem
+import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.viewmodel.ContentTrainingViewModel
 
 @Composable
@@ -43,7 +45,7 @@ fun ContentSelectorDialog(
         }
     }
     val scrollState = rememberScrollState()
-    val dialogSize  = (LocalConfiguration.current.screenHeightDp * ((0.1) * items.size)).dp
+    val dialogSize  = (LocalConfiguration.current.screenHeightDp * ((0.1) * items.size) + 10).dp
     val word = mutableListOf<String>()
     val contentSelected = viewModel.selectedContentTypes.collectAsState()
     Dialog(onDismissRequest = { onDismissRequest() }) {
@@ -57,7 +59,8 @@ fun ContentSelectorDialog(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(scrollState),
+                    .verticalScroll(scrollState)
+                    .background(CustomColorsPalette.current.background),
                 verticalArrangement = Arrangement.SpaceBetween,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
@@ -87,14 +90,14 @@ fun ContentSelectorDialog(
                         onClick = { onDismissRequest() },
                         modifier = Modifier.padding(8.dp)
                     ) {
-                        Text("Cancel")
+                        Text("Cancel", color = CustomColorsPalette.current.secondary)
                     }
                     TextButton(
                         onClick = { onConfirmation() },
                         modifier = Modifier.padding(8.dp),
                         enabled = contentSelected.value.isNotEmpty(),
                     ) {
-                        Text("Ok")
+                        Text("Ok", color = CustomColorsPalette.current.secondary)
                     }
                 }
             }

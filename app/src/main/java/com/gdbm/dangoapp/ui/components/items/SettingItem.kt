@@ -12,8 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
-import com.gdbm.dangoapp.ui.theme.GreenOk
-import com.gdbm.dangoapp.ui.theme.TextColor
+import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 
 @Composable
 fun SettingItem(typeName:String, selected:Boolean, callback: (Boolean) -> Unit) {
@@ -30,9 +29,12 @@ fun SettingItem(typeName:String, selected:Boolean, callback: (Boolean) -> Unit) 
                 callback(checkedStatus.value)
     }){
         Checkbox(
-            colors = CheckboxDefaults.colors(GreenOk),
+            colors = CheckboxDefaults.colors(
+                checkedColor = CustomColorsPalette.current.secondary,
+                uncheckedColor = CustomColorsPalette.current.tertiary
+            ),
             checked = checkedStatus.value,
             onCheckedChange = {checkedStatus.value = !checkedStatus.value;callback(checkedStatus.value)})
-        Text(text = typeName, color = TextColor)
+        Text(text = typeName, color = CustomColorsPalette.current.textColor)
     }
 }

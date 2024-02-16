@@ -13,6 +13,8 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Slider
 import androidx.compose.material.SliderDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -77,7 +79,7 @@ fun DrawTraining(
                 IconButton(onClick = {
                     openSelectorDialog.value = true
                 }) {
-                    Icon(painterResource(id = R.drawable.ic_list), contentDescription = null)
+                    Icon(Icons.Filled.Edit, contentDescription = null, tint = CustomColorsPalette.current.textColor)
                 }
             }
 

@@ -17,15 +17,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -44,7 +41,6 @@ import com.gdbm.dangoapp.ui.components.common.MultilevelText
 import com.gdbm.dangoapp.ui.components.common.NavBar
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.ui.theme.GreenBackground
-import com.gdbm.dangoapp.ui.theme.TextColor
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -114,7 +110,7 @@ fun Reference(
                                     Icon(
                                         imageVector = Icons.Default.ArrowDropDown,
                                         contentDescription = "",
-                                        tint = TextColor
+                                        tint = CustomColorsPalette.current.textColor
                                     )
                                 }
                             }
@@ -165,7 +161,7 @@ fun Reference(
                                                                 )
                                                             }
                                                         }) {
-                                                            Icon(Icons.Filled.PlayArrow, "play")
+                                                            Icon(Icons.Filled.PlayArrow, "play", tint = CustomColorsPalette.current.textColor)
                                                             MultilevelText(
                                                                 firstLevel = word.symbol,
                                                                 secondLevel = word.meaning,
