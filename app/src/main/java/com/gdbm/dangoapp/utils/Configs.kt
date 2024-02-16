@@ -16,40 +16,60 @@ object Configs{
     )
 
     const val CURRENT_LANGUAGE = "japanese"
-    val MENU_OPTIONS = listOf(
+    val OPTIONS_REFERENCE_SCREEN = listOf(
         MenuElement(
-            name = "Hiragana Reference",
+            name = "Hiragana",
             content = "hiragana",
             java = ReferenceActivity::class.java),
         MenuElement(
-            name = "Katakana Reference",
+            name = "Katakana",
             content = "katakana",
             java = ReferenceActivity::class.java
         ),
         MenuElement(
-            name = "Numbers Reference",
+            name = "Numbers",
             content = "numbers",
             isLargeContent = true,
             java = ReferenceActivity::class.java
         ),
         MenuElement(
-            name = "Dates Reference",
+            name = "Dates",
             content = "dates",
             isLargeContent = true,
             java = ReferenceActivity::class.java
         ),
         MenuElement(
-            name = "Syllabary Practice",
+            name = "Verbs",
+            content = "verbs",
+            isLargeContent = true,
+            java = ReferenceActivity::class.java
+        ),
+        MenuElement(
+            name = "Particles",
+            content = "particles",
+            isLargeContent = true,
+            java = ReferenceActivity::class.java
+        ),
+        MenuElement(
+            name = "Adjectives",
+            content = "adjectives",
+            isLargeContent = true,
+            java = ReferenceActivity::class.java
+        )
+    )
+    val OPTIONS_PRACTICE_SCREEN = listOf(
+        MenuElement(
+            name = "Syllabary",
             content = "syllabaryPractice",
             java = WritingPracticeActivity::class.java
         ),
         MenuElement(
-            name = "Vocabulary Practice",
+            name = "Vocabulary",
             content = "vocabularyPractice",
             java = WritingPracticeActivity::class.java
         ),
         MenuElement(
-            name = "Syllabary Drawing Practice",
+            name = "Syllabary Drawing",
             content = "syllabaryPractice",
             java = DrawPracticeActivity::class.java
         ),
@@ -61,7 +81,7 @@ object Configs{
             java = DrawPracticeActivity::class.java
         ),
         MenuElement(
-            name = "Vocabulary Drawing Practice",
+            name = "Vocabulary Drawing",
             content = "vocabularyPractice",
             java = DrawPracticeActivity::class.java
         ),
@@ -73,6 +93,8 @@ object Configs{
             java = DrawPracticeActivity::class.java
         )
     )
+
+    val MENU_OPTIONS = OPTIONS_REFERENCE_SCREEN + OPTIONS_PRACTICE_SCREEN
     val SYLLABARY_ITEMS = listOf("hiragana","katakana")
     val VOCABULARY_ITEMS = listOf("numbers","dates")
     const val ALL_CONTENT = "allContent"

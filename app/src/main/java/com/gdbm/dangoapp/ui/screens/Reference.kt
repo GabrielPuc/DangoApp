@@ -161,7 +161,9 @@ fun Reference(
                                                                 )
                                                             }
                                                         }) {
-                                                            Icon(Icons.Filled.PlayArrow, "play", tint = CustomColorsPalette.current.textColor)
+                                                            Box(contentAlignment = Alignment.TopEnd, modifier = Modifier.fillMaxWidth(1f).padding(end = 10.dp)) {
+                                                                Icon(Icons.Filled.PlayArrow, "play", tint = CustomColorsPalette.current.textColor)
+                                                            }
                                                             MultilevelText(
                                                                 firstLevel = word.symbol,
                                                                 secondLevel = word.meaning,

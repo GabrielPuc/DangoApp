@@ -1,23 +1,43 @@
 package com.gdbm.dangoapp.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 import com.gdbm.dangoapp.R
 import com.gdbm.dangoapp.managers.ContentManager
 import com.gdbm.dangoapp.managers.FileManager
+import com.gdbm.dangoapp.ui.components.NavigationContainer
+import com.gdbm.dangoapp.ui.components.common.NavBar
+import com.gdbm.dangoapp.ui.components.items.SettingsButton
 import com.gdbm.dangoapp.utils.Configs
 import com.gdbm.dangoapp.ui.screens.Main
 import com.gdbm.dangoapp.ui.theme.CustomColorsPalette
 import com.gdbm.dangoapp.ui.theme.DangoTheme
+import com.gdbm.dangoapp.utils.NavigationItem
 import com.gdbm.dangoapp.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
@@ -38,7 +58,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = CustomColorsPalette.current.background
                 ) {
-                    Main(mainViewModel = mainViewModel, screenTitle = this@MainActivity.resources.getString(
+                    //Main(mainViewModel = mainViewModel, screenTitle = this@MainActivity.resources.getString(
+                    //    R.string.app_name))
+                    NavigationContainer(mainViewModel = mainViewModel, title = this@MainActivity.resources.getString(
                         R.string.app_name))
                 }
             }
