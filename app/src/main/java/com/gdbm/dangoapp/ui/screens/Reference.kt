@@ -72,6 +72,7 @@ fun Reference(
             val itemsInRow = screenWidth / widthOfItem
 
             LazyColumn() {
+                if(contentToShow.toList().size == 1) indexSelected.add(0)
                 contentToShow.toList().forEachIndexed { index, entry ->
                     stickyHeader {
                         Column {
