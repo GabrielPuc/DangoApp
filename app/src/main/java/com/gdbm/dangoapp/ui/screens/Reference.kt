@@ -167,8 +167,8 @@ fun Reference(
                                                             }
                                                             MultilevelText(
                                                                 firstLevel = word.symbol,
-                                                                secondLevel = word.meaning,
-                                                                thirdLevel = word.latinBased,
+                                                                thirdLevel = word.meaning,
+                                                                secondLevel = if(word.symbol != word.pronunciation) word.pronunciation else null,
                                                                 cardWidth = widthOfItem.dp
                                                             )
                                                         }

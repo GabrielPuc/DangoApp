@@ -34,8 +34,8 @@ class SettingsActivity : ComponentActivity() {
         settingsViewModel =
             ViewModelProvider(this)[SettingsViewModel::class.java]
         setContent {
-            val isDarkMode = settingsViewModel.isDarkMode.collectAsState()
-            DangoTheme(darkTheme = isDarkMode.value) {
+            //val isDarkMode = settingsViewModel.isDarkMode.collectAsState()
+            DangoTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = CustomColorsPalette.current.background,

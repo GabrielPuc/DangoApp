@@ -35,17 +35,23 @@ class ContentTrainingViewModel : ViewModel() {
         _selectedContentTypes.value = emptyList()
         when (content){
             SYLLABARY_CONTENT -> {
-                SYLLABARY_ITEMS.iterator().forEach {
-                    wordList.add(it)
-                    contentManager.retrieve(it)?.let { retrievedWords ->
+                SYLLABARY_ITEMS.iterator().forEach { selectedContent ->
+                    wordList.add(selectedContent)
+                    contentManager.retrieve(selectedContent)?.let { retrievedWords ->
+                        retrievedWords.map {
+                            it.type = selectedContent
+                        }
                         selectedWords.addAll(retrievedWords)
                     }
                 }
             }
             VOCABULARY_CONTENT -> {
-                VOCABULARY_ITEMS.iterator().forEach {
-                    wordList.add(it)
-                    contentManager.retrieve(it)?.let { retrievedWords ->
+                VOCABULARY_ITEMS.iterator().forEach { selectedContent ->
+                    wordList.add(selectedContent)
+                    contentManager.retrieve(selectedContent)?.let { retrievedWords ->
+                        retrievedWords.map {
+                            it.type = selectedContent
+                        }
                         selectedWords.addAll(retrievedWords)
                     }
                 }
@@ -56,8 +62,11 @@ class ContentTrainingViewModel : ViewModel() {
 
     fun setWordsFromSelectedContent(){
         selectedWords.clear()
-        _selectedContentTypes.value.iterator().forEach {
-            contentManager.retrieve(it)?.let { retrievedWords ->
+        _selectedContentTypes.value.iterator().forEach { selected ->
+            contentManager.retrieve(selected)?.let { retrievedWords ->
+                retrievedWords.map {
+                    it.type = selected
+                }
                 selectedWords.addAll(retrievedWords)
             }
         }

@@ -14,16 +14,18 @@ class ImageManager (val context: Context, private val textRecognizer: TessBaseAP
 
     private val resultStatus = MutableLiveData<Pair<Int,String?>>()
 
-    fun analyzeImageWith(drawing: Bitmap, symbol: Word):Pair<Int,String?>{
+    fun analyzeImageWith(drawing: Bitmap, word: Word):Pair<Int,String?>{
         val scaled = scaleDownBitmapByMaxSize(drawing,480)
         textRecognizer.setImage(scaled)
-        val result = textRecognizer.utF8Text
-        resultStatus.value = when(result){
-            symbol.symbol -> Pair(ContentTrainingViewModel.CORRECT, null)
-            "" -> Pair(ContentTrainingViewModel.ERROR, null)
-            else -> Pair(ContentTrainingViewModel.WRONG, result)
+        val textRead = textRecognizer.utF8Text
+
+        if(textRead.isNullOrBlank()) return Pair(ContentTrainingViewModel.ERROR, null)
+
+        if(word.symbol.chunked(1).any { it in textRead.chunked(1) }){
+            return Pair(ContentTrainingViewModel.CORRECT, null)
         }
-        return resultStatus.value ?: Pair(ContentTrainingViewModel.ERROR,null)
+
+        return Pair(ContentTrainingViewModel.WRONG, textRead)
     }
 
     private fun saveDrawing(bitmap: Bitmap?, context: Context) {

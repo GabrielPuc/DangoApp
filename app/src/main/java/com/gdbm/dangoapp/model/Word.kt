@@ -5,5 +5,6 @@ data class Word(
     val meaning:String,
     val group:String,
     val pronunciation:String?,
-    val latinBased:String?
+    val latinBased:String?,
+    var type:String?
 )

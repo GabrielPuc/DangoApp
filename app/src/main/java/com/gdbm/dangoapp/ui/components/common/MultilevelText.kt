@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 import com.gdbm.dangoapp.ui.theme.PinkBackground
 
 @Composable
-fun MultilevelText(firstLevel:String, secondLevel:String?=null, thirdLevel:String?=null, cardWidth:Dp? = null){
+fun MultilevelText(firstLevel:String, thirdLevel:String?=null, secondLevel:String?=null, cardWidth:Dp? = null){
     Column {
         Text(
             text = firstLevel,
@@ -30,7 +30,6 @@ fun MultilevelText(firstLevel:String, secondLevel:String?=null, thirdLevel:Strin
                 modifier = Modifier
                     .padding(6.dp).fillMaxWidth(1f),
                 textAlign = TextAlign.Center,
-                color = PinkBackground,
                 maxLines = 1
             )
         }
@@ -41,6 +40,7 @@ fun MultilevelText(firstLevel:String, secondLevel:String?=null, thirdLevel:Strin
                 modifier = Modifier
                     .padding(6.dp).fillMaxWidth(1f),
                 textAlign = TextAlign.Center,
+                color = PinkBackground,
                 maxLines = 1
             )
         }

@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,6 +38,7 @@ import com.gdbm.dangoapp.R
 import com.gdbm.dangoapp.ui.components.common.CardFace
 import com.gdbm.dangoapp.ui.components.common.FlippableCard
 import com.gdbm.dangoapp.ui.components.common.NavBar
+import com.gdbm.dangoapp.ui.components.common.PracticeCardContent
 import com.gdbm.dangoapp.ui.components.common.ResizableText
 import com.gdbm.dangoapp.ui.components.common.TextSizeRange
 import com.gdbm.dangoapp.ui.components.dialogs.ContentSelectorDialog
@@ -107,45 +110,18 @@ fun WriteTraining(
                 cardFace = cardFace,
                 onClick = {/*cardFace = cardFace.flip*/},
                 front = {
-                    Box(contentAlignment = Alignment.Center){
-                        ResizableText(
-                            text = wordOptions[correctAnswerIndex].symbol,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .fillMaxWidth(1f)
-                                .height(140.dp),
-                            textSizeRange = TextSizeRange(
-                                min = 40.sp,
-                                max = 140.sp,
-                                step = 20.sp
-                            ),
-                            color = CustomColorsPalette.current.textColor,
-                            overflow = TextOverflow.Visible,
-                            style = MaterialTheme.typography.body1,
-                        )
-
-                    }
-
+                    PracticeCardContent(
+                        word = wordOptions[correctAnswerIndex].symbol,
+                        type = wordOptions[correctAnswerIndex].type!!,
+                        customHeight = 140
+                    )
                 },
                 back = {
-                    Box(contentAlignment = Alignment.Center){
-                        ResizableText(
-                            text = wordOptions[correctAnswerIndex].meaning,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .fillMaxWidth(1f)
-                                .align(Alignment.Center),
-                            textSizeRange = TextSizeRange(
-                                min = 40.sp,
-                                max = 140.sp,
-                                step = 20.sp
-                            ),
-                            color = CustomColorsPalette.current.textColor,
-                            overflow = TextOverflow.Visible,
-                            style = MaterialTheme.typography.body1,
-                        )
-                    }
-
+                    PracticeCardContent(
+                        word = wordOptions[correctAnswerIndex].meaning,
+                        type = wordOptions[correctAnswerIndex].type!!,
+                        customHeight = 140
+                    )
                 })
             
             LazyVerticalGrid(columns = GridCells.Adaptive(200.dp), modifier = Modifier

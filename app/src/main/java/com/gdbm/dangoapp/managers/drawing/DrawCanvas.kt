@@ -53,7 +53,7 @@ fun DrawCanvas(
                             alpha = pw.alpha,
                             style = Stroke(
                                 width = pw.strokeWidth,
-                                cap = StrokeCap.Round,
+                                cap = StrokeCap.Square,
                                 join = StrokeJoin.Round
                             )
                         )

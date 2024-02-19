@@ -55,13 +55,13 @@ fun NavigationContainer(mainViewModel:MainViewModel, title:String) {
                         label = {
                             Text(
                                 text = it.label,
-                                color = if (currentRoute == it.route) CustomColorsPalette.current.textColor else CustomColorsPalette.current.background
+                                color = if (currentRoute == it.route) CustomColorsPalette.current.primaryContainerColor else CustomColorsPalette.current.textColor
                             )
                         },
                         icon = {
                             Icon(
                                 imageVector = it.icons, contentDescription = null,
-                                tint = if (currentRoute == it.route) CustomColorsPalette.current.textColor else CustomColorsPalette.current.background
+                                tint = if (currentRoute == it.route) CustomColorsPalette.current.primaryContainerColor else CustomColorsPalette.current.textColor
                             )
 
                         },

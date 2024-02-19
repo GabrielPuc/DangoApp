@@ -31,7 +31,7 @@ fun MenuItem(title:String, subtitle:String? = null, callback:() -> Unit) {
     ) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxSize(1f)) {
             Column {
-                MultilevelText(firstLevel = title, secondLevel = subtitle)
+                MultilevelText(firstLevel = title, thirdLevel = subtitle)
             }
 
         }

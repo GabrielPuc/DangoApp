@@ -15,6 +15,7 @@ data class CustomPalette(
     val primaryContainerColor: Color = Color.Unspecified,
     val secondaryContainerColor: Color = Color.Unspecified,
     val contrastColor: Color = Color.Unspecified,
+    val mainContrast:Color = Color.Unspecified
 )
 
 val CustomColorsPalette = staticCompositionLocalOf { CustomPalette() }

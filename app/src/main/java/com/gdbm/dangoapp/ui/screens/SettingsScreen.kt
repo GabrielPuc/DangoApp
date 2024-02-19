@@ -76,7 +76,7 @@ fun SettingsDetail(settingsViewModel: SettingsViewModel) {
                         fontSize = 22.sp,
                         style = MaterialTheme.typography.button,
                         modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
-                        color = Color.White
+                        color = CustomColorsPalette.current.textColor
                     )
                 }
             }

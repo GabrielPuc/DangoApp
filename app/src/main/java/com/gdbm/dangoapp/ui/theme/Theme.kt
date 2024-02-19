@@ -22,8 +22,8 @@ private val DarkColorScheme = CustomPalette(
     primaryContainerColor = GreenBackground,
     secondaryContainerColor = PinkBackground,
     contrastColor = GreenContrast,
-    backgroundCanvas = Black
-
+    backgroundCanvas = Black,
+    mainContrast = MainContrast
 )
 
 private val LightColorScheme = CustomPalette(
@@ -35,8 +35,8 @@ private val LightColorScheme = CustomPalette(
     primaryContainerColor = GreenBackground,
     secondaryContainerColor = PinkBackground,
     contrastColor = GreenContrast,
-    backgroundCanvas = Color.White
-
+    backgroundCanvas = Color.White,
+    mainContrast = MainContrast
 )
 
 private val DefaultDark = darkColorScheme(
